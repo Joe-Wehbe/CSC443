@@ -12,14 +12,11 @@
             }
 
             .button{
-                margin-top: 1%;
+                margin-top: 1.5%;
+                width: 130px;
             }
 
-            #statement1{
-                margin-top: 5%;
-            }
-
-            #statement2{
+            .statement{
                 margin-top: 5%;
             }
 
@@ -33,27 +30,17 @@
                 padding: 10px;
             }
 
-            .red{
-                background-color: red;
-            }
-
-            .green{
-                background-color: green;
-            }
-
-            .blue{
-                background-color: blue;
-            }
-
-            .magenta{
-                background-color: magenta;
-            }
+            .red { background-color: red; }
+            .green { background-color: green; }
+            .blue { background-color: blue; }
+            .magenta { background-color: magenta; }
         </style>
     </head>
 
+    <!--------------------------------------------------------------------------->
+
     <body>
         <h1> Welcome to shape drawer! </h1> <br><br>
-
         <h3> Enter the size of the billboard: </h3>
         <form method="GET">
             <label for="N">Number of rows (N)</label><br>
@@ -64,6 +51,8 @@
             
             <input class="button" type="submit" value="Generate Billboard">
         </form>
+
+    <!--------------------------------------------------------------------------->
         
         <?php
         $N = $M = 0;  
@@ -72,28 +61,42 @@
             $M = $_GET['M'];?>
 
             <form method="POST">
-            <input type="hidden" name="N" value="<?php echo $N; ?>">
-            <input type="hidden" name="M" value="<?php echo $M; ?>">
+                <input type="hidden" name="N" value="<?php echo $N; ?>">
+                <input type="hidden" name="M" value="<?php echo $M; ?>">
 
-            <div id="statement1">
-                <h3> Check some boxes to draw a shape: <h3>
-            </div>
+                <div class="statement">
+                    <h3> Check some boxes to draw a shape: <h3>
+                </div>
 
-            <?php
-            for($i = 1; $i <= $N; $i++){?><br><?php
-                for($j = 1; $j <= $M; $j++){ ?>
-                    <input id="checkboxes" type="checkbox" name="checkbox[<?php echo $i; ?>][<?php echo $j; ?>]" value="yes"><?php
-                }
-            }?><br>
-            <input class="button" type="submit" value="Draw">
-            <select name="color">
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="magenta">Magenta</option>
-            </select>
-        </form><?php
+                <?php
+                for($i = 1; $i <= $N; $i++){?><br><?php
+                    for($j = 1; $j <= $M; $j++){ ?>
+                        <input id="checkboxes" type="checkbox" name="checkbox[<?php echo $i; ?>][<?php echo $j; ?>]" value="yes"><?php
+                    }
+                }?><br><br>
+
+                <label for="colors">Choose a color:</label>
+                <select name="color">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="magenta">Magenta</option>
+                </select> <br>
+
+                <label for="mode">Mode:</label>
+                <label>
+                    <input type="radio" name="normal" value="normal"> Normal
+                </label>
+                <label>
+                    <input type="radio" name="inverted" value="inverted"> Inverted
+                </label><br>
+
+                <input class="button" type="submit" value="Draw">
+
+            </form><?php
         }?>
+
+    <!--------------------------------------------------------------------------->
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -102,7 +105,7 @@
 
             if (isset($_POST["checkbox"]) && is_array($_POST["checkbox"])) { ?>
 
-                <div id="statement2">
+                <div class="statement">
                     <h3> Your shape:  <h3>
                 </div> 
 
