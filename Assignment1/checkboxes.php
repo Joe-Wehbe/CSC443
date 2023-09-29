@@ -85,10 +85,10 @@
 
                 <label for="mode">Mode:</label>
                 <label>
-                    <input type="radio" name="normal" value="normal"> Normal
+                    <input type="radio" name="mode" value="normal"> Normal
                 </label>
                 <label>
-                    <input type="radio" name="inverted" value="inverted"> Inverted
+                    <input type="radio" name="mode" value="inverted"> Inverted
                 </label><br>
 
                 <input class="button" type="submit" value="Draw">
@@ -113,23 +113,45 @@
                     <?php
                     for ($i = 1; $i <= $N; $i++) {?>
                         <tr><?php
-                        for ($j = 1; $j <= $M; $j++) {                         
-                            if (isset($_POST["checkbox"][$i][$j]) && $_POST["checkbox"][$i][$j] == "yes") {
-                                if(isset($_POST["color"]) && $_POST["color"] == "red"){?>
-                                    <td class="red"></td><?php
+                        for ($j = 1; $j <= $M; $j++) {   
+                            
+                            if(isset($_POST["mode"]) && $_POST["mode"] == "normal"){
+                                if (isset($_POST["checkbox"][$i][$j]) && $_POST["checkbox"][$i][$j] == "yes") {
+                                    if(isset($_POST["color"]) && $_POST["color"] == "red"){?>
+                                        <td class="red"></td><?php
+                                    }
+                                    if(isset($_POST["color"]) && $_POST["color"] == "green"){?>
+                                        <td class="green"></td><?php
+                                    }
+                                    if(isset($_POST["color"]) && $_POST["color"] == "blue"){?>
+                                        <td id="blue"></td><?php
+                                    }
+                                    if(isset($_POST["color"]) && $_POST["color"] == "magenta"){?>
+                                        <td id="magenta"></td><?php
+                                    }
+                                }else{?>
+                                    <td></td><?php
                                 }
-                                if(isset($_POST["color"]) && $_POST["color"] == "green"){?>
-                                    <td class="green"></td><?php
+                            }
+
+                            if(isset($_POST["mode"]) && $_POST["mode"] == "inverted"){
+                                if(!isset($_POST["checkbox"][$i][$j])) { 
+                                    if(isset($_POST["color"]) && $_POST["color"] == "red"){?>
+                                        <td class="red"></td><?php
+                                    }
+                                    if(isset($_POST["color"]) && $_POST["color"] == "green"){?>
+                                        <td class="green"></td><?php
+                                    }
+                                    if(isset($_POST["color"]) && $_POST["color"] == "blue"){?>
+                                        <td class="blue"></td><?php
+                                    }
+                                    if(isset($_POST["color"]) && $_POST["color"] == "magenta"){?>
+                                        <td class="magenta"></td><?php
+                                    }
+                                }else{?>
+                                    <td></td><?php
                                 }
-                                if(isset($_POST["color"]) && $_POST["color"] == "blue"){?>
-                                    <td class="blue"></td><?php
-                                }
-                                if(isset($_POST["color"]) && $_POST["color"] == "magenta"){?>
-                                    <td class="magenta"></td><?php
-                                }
-                            } else { ?>
-                                <td></td><?php
-                            }?></td><?php
+                            }
                         }?></tr><?php
                     }?>   
                 </table><?php
