@@ -124,10 +124,10 @@
                                         <td class="green"></td><?php
                                     }
                                     if(isset($_POST["color"]) && $_POST["color"] == "blue"){?>
-                                        <td id="blue"></td><?php
+                                        <td class="blue"></td><?php
                                     }
                                     if(isset($_POST["color"]) && $_POST["color"] == "magenta"){?>
-                                        <td id="magenta"></td><?php
+                                        <td class="magenta"></td><?php
                                     }
                                 }else{?>
                                     <td></td><?php
