@@ -40,7 +40,7 @@
     <!--------------------------------------------------------------------------->
 
     <body>
-        <h1> Welcome to shape drawer! </h1> <br><br>
+        <h1>Billboard Simulator </h1> <br><br>
         <h3> Enter the size of the billboard: </h3>
         <form method="GET">
             <label for="N">Number of rows (N)</label><br>
