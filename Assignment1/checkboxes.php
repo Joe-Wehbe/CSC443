@@ -85,7 +85,7 @@
 
                 <label for="mode">Mode:</label>
                 <label>
-                    <input type="radio" name="mode" value="normal"> Normal
+                    <input type="radio" name="mode" value="normal" checked> Normal
                 </label>
                 <label>
                     <input type="radio" name="mode" value="inverted"> Inverted
