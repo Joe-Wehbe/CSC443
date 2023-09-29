@@ -33,8 +33,20 @@
                 padding: 10px;
             }
 
-            .colored{
+            .red{
+                background-color: red;
+            }
+
+            .green{
+                background-color: green;
+            }
+
+            .blue{
                 background-color: blue;
+            }
+
+            .magenta{
+                background-color: magenta;
             }
         </style>
     </head>
@@ -74,8 +86,13 @@
                 }
             }?><br>
             <input class="button" type="submit" value="Draw">
-        </form>
-        <?php
+            <select name="color">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="magenta">Magenta</option>
+            </select>
+        </form><?php
         }?>
 
         <?php
@@ -94,8 +111,19 @@
                     for ($i = 1; $i <= $N; $i++) {?>
                         <tr><?php
                         for ($j = 1; $j <= $M; $j++) {                         
-                            if (isset($_POST["checkbox"][$i][$j]) && $_POST["checkbox"][$i][$j] == "yes") {?>
-                                <td class="colored"></td><?php
+                            if (isset($_POST["checkbox"][$i][$j]) && $_POST["checkbox"][$i][$j] == "yes") {
+                                if(isset($_POST["color"]) && $_POST["color"] == "red"){?>
+                                    <td class="red"></td><?php
+                                }
+                                if(isset($_POST["color"]) && $_POST["color"] == "green"){?>
+                                    <td class="green"></td><?php
+                                }
+                                if(isset($_POST["color"]) && $_POST["color"] == "blue"){?>
+                                    <td class="blue"></td><?php
+                                }
+                                if(isset($_POST["color"]) && $_POST["color"] == "magenta"){?>
+                                    <td class="magenta"></td><?php
+                                }
                             } else { ?>
                                 <td></td><?php
                             }?></td><?php
