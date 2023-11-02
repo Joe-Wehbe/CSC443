@@ -4,6 +4,12 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css?<?php echo time() ?>" />
         <title>Sign up</title>
+
+        <style>
+            .highlight {border: 1px solid red;}
+
+        </style>
+
     </head>
 
     <?php require_once("pdo.php");?>
@@ -12,10 +18,30 @@
         <h1>Welcome</h1>
 
         <form method = "POST" action="signup.php">
-            <input type="text" name="username" placeholder="Username" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>">
-            <input type="password" name="password" placeholder="Password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>">
-            <input type="password" name="confirmation" placeholder="Confirm your password">
+            <input type="text" name="username" placeholder="Username" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" <?php 
+            if(isset($_POST['username'])){
+                $username = $_POST['username'];
+                if(strlen($username) < 3){
+                    echo 'class="highlight"';
+                }
+            }?>>
+            
+            <input type="text" name="password" placeholder="Password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>" <?php 
+            if(isset($_POST['password'])){
+                $password = $_POST['password'];
+                if(strlen($password) < 3){
+                    echo 'class="highlight"';
+                }
+            }?>> 
 
+            <input type="text" name="confirmation" placeholder="Password"<?php 
+            if(isset($_POST['confirmation'])){
+                $confirmation = $_POST['confirmation'];
+                if($password !== $confirmation){
+                    echo 'class="highlight"';
+                }
+            }?>>             
+            
             <input type="submit" name="signup" value="Sign up">
         </form> 
 
@@ -27,10 +53,8 @@
             $password = $_POST["password"];
             $confirmation = $_POST["confirmation"];
 
-            if($password != $confirmation){
-                echo "Incorrect password confirmation!";
-            }
-            elseif(strlen($username) < 3 && strlen($password) < 3){
+
+            if(strlen($username) < 3 && strlen($password) < 3){
                 echo "Your username and password are too short!";
             }
             elseif(strlen($username) < 3){
@@ -38,6 +62,9 @@
             }
             elseif(strlen($password) < 3){
                 echo "Your password is too short!";
+            }
+            elseif($password != $confirmation){
+                echo "Incorrect password confirmation!";
             }
             else{
 
