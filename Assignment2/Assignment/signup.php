@@ -23,19 +23,29 @@
 
             $username = $_POST["username"];
             $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
-            
-            $stm = $pdo->prepare("SELECT count(*) FROM users WHERE username='$username'");
-            $stm->execute();
-            $result = $stm->fetch(PDO::FETCH_ASSOC);
 
-            if($result['count(*)'] > 0){
-                echo $username . " already exists!";
+            if(strlen($username) < 3){
+                echo "Enter a username with 3 characters minimum";
             }
+            else{
+
+                $stm = $pdo->prepare("SELECT count(*) AS user_count FROM users WHERE username=?");
+                $stm->bindParam(1,$username);
+                $stm->execute();
+                $result = $stm->fetch(PDO::FETCH_ASSOC);
     
-            $stm = $pdo->prepare("INSERT INTO users (username, password) VALUES(?,?)");
-            $stm->bindParam(1, $username);
-            $stm->bindParam(2, $password);
-            $stm->execute();
+                if($result['user_count'] > 0){
+                    echo "Username already exists!";
+                }
+                else{
+                    $stm = $pdo->prepare("INSERT INTO users (username, password) VALUES(?,?)");
+                    $stm->bindParam(1, $username);
+                    $stm->bindParam(2, $password);
+                    $stm->execute();
+                }
+
+            }
+        
         }
         ?>
 
