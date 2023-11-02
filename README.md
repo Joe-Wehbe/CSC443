@@ -1,5 +1,5 @@
 # CSC443
-This repository contains all the assignments that I have completed for the Web Development course (CSC443) at the Lebanese American University.
+This repository contains all the assignments that I have completed for the Web Development course (CSC443) at the <a href="https://lau.edu.lb"> Lebanese American University</a>.
 
 ## Assignment 1
 This assignment consists of developing a billboard simulator using php, html, and css. The website displays a matrix of checkboxes that the user can select, and the corresponding drawing will be generated. Additional features such as drawing colors and inversion are implemented. You can acess the instructions of the assignment under its folder for further details.
