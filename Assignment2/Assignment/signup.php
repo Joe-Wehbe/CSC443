@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,8 +12,10 @@
         <h1>Welcome</h1>
 
         <form method = "POST" action="signup.php">
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="username" placeholder="Username" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>">
+            <input type="password" name="password" placeholder="Password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>">
+            <input type="password" name="confirmation" placeholder="Confirm your password">
+
             <input type="submit" name="sign up" value="Sign up">
         </form> 
 
@@ -22,10 +23,20 @@
         if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $username = $_POST["username"];
-            $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+            $password = $_POST["password"];
+            $confirmation = $_POST["confirmation"];
 
-            if(strlen($username) < 3){
-                echo "Enter a username with 3 characters minimum";
+            if($password != $confirmation){
+                echo "Incorrect password confirmation!";
+            }
+            elseif(strlen($username) < 3 && strlen($password) < 3){
+                echo "Your username and password are too short!";
+            }
+            elseif(strlen($username) < 3){
+                echo "Your username is too short!";
+            }
+            elseif(strlen($password) < 3){
+                echo "Your password is too short!";
             }
             else{
 
@@ -38,16 +49,14 @@
                     echo "Username already exists!";
                 }
                 else{
+                    $password = password_hash($password, PASSWORD_BCRYPT);
                     $stm = $pdo->prepare("INSERT INTO users (username, password) VALUES(?,?)");
                     $stm->bindParam(1, $username);
                     $stm->bindParam(2, $password);
                     $stm->execute();
                 }
-
-            }
-        
+            }       
         }
         ?>
-
     </body>
 </html
