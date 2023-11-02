@@ -54,6 +54,9 @@
                     $stm->bindParam(1, $username);
                     $stm->bindParam(2, $password);
                     $stm->execute();
+
+                    header("Location: ../Q2/actorsListPaged.php");
+
                 }
             }       
         }
