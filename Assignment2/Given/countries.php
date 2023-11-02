@@ -4,11 +4,11 @@
 
     <?php
 
-    require_once("..\pdo.php");
+    require_once("pdo.php");
 
     session_start();
     if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
-        header("Location: ../Assignment/signin.php");
+        header("Location: Assignment/signin.php");
         exit(); 
     }
 

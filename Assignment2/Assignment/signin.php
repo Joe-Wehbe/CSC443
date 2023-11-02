@@ -6,7 +6,7 @@
         <title>Sign up</title>
     </head>
 
-    <?php require_once("..\pdo.php");?>
+    <?php require_once("pdo.php");?>
 
     <body>
         <h1>Welcome</h1>

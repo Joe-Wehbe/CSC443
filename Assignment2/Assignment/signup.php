@@ -6,7 +6,7 @@
         <title>Sign up</title>
     </head>
 
-    <?php require_once("..\pdo.php");?>
+    <?php require_once("pdo.php");?>
 
     <body>
         <h1>Welcome</h1>
@@ -57,7 +57,7 @@
                     $stm->execute();
                     
                     $_SESSION['authenticated'] = true;
-                    header("Location: ../Q2/actorsListPaged.php");
+                    header("Location: ../Given/actors.php");
                     exit();
                 }
             }       

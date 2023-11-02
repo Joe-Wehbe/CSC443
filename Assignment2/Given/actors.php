@@ -8,11 +8,11 @@
 
 <body>
     <?php
-    require_once '..\pdo.php';
+    require_once 'pdo.php';
 
     session_start();
     if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
-        header("Location: ../Assignment/signin.php");
+        header("Location: Assignment/signin.php");
         exit(); 
     }
 
@@ -35,7 +35,7 @@
 
     echo '<table border="1"><thead><tr><td> Actor Name</td></tr></thead>';
     foreach ($actors as $actor) {
-        echo "<tr><td><a href=filmsListActor.php?actorID=" . $actor['actor_id'] . ">";
+        echo "<tr><td><a href=movies.php?actorID=" . $actor['actor_id'] . ">";
         echo $actor['first_name'] . " " . $actor['last_name'] . "</a></td></tr>";
     }
 
@@ -45,7 +45,7 @@
         $nbPages++;
     echo '<br>Pages: ';
     for ($i = 0; $i < $nbPages; $i++) {
-        echo '<a href="actorsListPaged.php?pageIndex=' . $i . '">' . ($i + 1) . '</a> ';
+        echo '<a href="actors.php?pageIndex=' . $i . '">' . ($i + 1) . '</a> ';
     }
 
     ?>
