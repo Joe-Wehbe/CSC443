@@ -7,7 +7,6 @@
 
         <style>
             .highlight {border: 1px solid red;}
-
         </style>
 
     </head>
@@ -53,7 +52,6 @@
             $password = $_POST["password"];
             $confirmation = $_POST["confirmation"];
 
-
             if(strlen($username) < 3 && strlen($password) < 3){
                 echo "Your username and password are too short!";
             }
@@ -84,6 +82,7 @@
                     $stm->execute();
                     
                     $_SESSION['authenticated'] = true;
+                    $_SESSION['username'] = $username;
                     header("Location: ../Given/actors.php");
                     exit();
                 }
