@@ -16,10 +16,11 @@
             <input type="password" name="password" placeholder="Password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>">
             <input type="password" name="confirmation" placeholder="Confirm your password">
 
-            <input type="submit" name="sign up" value="Sign up">
+            <input type="submit" name="signup" value="Sign up">
         </form> 
 
         <?php
+        session_start();
         if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $username = $_POST["username"];
@@ -54,9 +55,10 @@
                     $stm->bindParam(1, $username);
                     $stm->bindParam(2, $password);
                     $stm->execute();
-
+                    
+                    $_SESSION['authenticated'] = true;
                     header("Location: ../Q2/actorsListPaged.php");
-
+                    exit();
                 }
             }       
         }

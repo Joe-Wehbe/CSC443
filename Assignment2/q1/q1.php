@@ -6,6 +6,12 @@
 
     require_once("..\pdo.php");
 
+    session_start();
+    if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
+        header("Location: ../Assignment/signin.php");
+        exit(); 
+    }
+
     $sql = "select * from country";
     $stm = $pdo->prepare($sql);
     $stm->execute();

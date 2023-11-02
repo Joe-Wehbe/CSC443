@@ -11,6 +11,12 @@
     <?php
     require_once '..\pdo.php';
 
+    session_start();
+    if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
+        header("Location: ../Assignment/signin.php");
+        exit(); 
+    }
+
     $actor_id = $_GET['actorID'];
 
     $sql = "SELECT * FROM actor where actor_id=:actor_id;";
