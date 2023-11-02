@@ -20,8 +20,17 @@
 
         <?php
         if($_SERVER["REQUEST_METHOD"] == "POST"){
+
             $username = $_POST["username"];
             $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+            
+            $stm = $pdo->prepare("SELECT count(*) FROM users WHERE username='$username'");
+            $stm->execute();
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+
+            if($result['count(*)'] > 0){
+                echo $username . " already exists!";
+            }
     
             $stm = $pdo->prepare("INSERT INTO users (username, password) VALUES(?,?)");
             $stm->bindParam(1, $username);
