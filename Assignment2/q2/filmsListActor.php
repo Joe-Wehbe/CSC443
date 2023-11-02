@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require_once 'pdo.php';
+    require_once '..\pdo.php';
 
     $actor_id = $_GET['actorID'];
 

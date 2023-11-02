@@ -8,7 +8,7 @@
 
 <body>
     <?php
-    require_once 'pdo.php';
+    require_once '..\pdo.php';
 
     if (!isset($_GET['pageIndex']))
         $pageIndex = 0;
