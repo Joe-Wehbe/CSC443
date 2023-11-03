@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="signin.css?<?php echo time() ?>" />
-        <title>Sign up</title>
+        <title>Sign in</title>
     </head>
 
     <?php require_once("pdo.php");?>
@@ -12,12 +12,26 @@
         <h1>Sign into your account</h1>
 
         <form method = "POST" action="signin.php">
-            <input class="email" type="text" name="username" placeholder="Username..." value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>"><br>
-            <input class="password" type="password" name="password" placeholder="Password..." value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>"><br>
+            <input class="email" type="text" name="username" placeholder="Username..." value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" <?php 
+                if(isset($_POST['username'])){
+                    $username = $_POST['username'];
+                    if(strlen($username) < 3){
+                        echo 'id="highlight"';
+                    }
+                }?>><br>            
+            
+            <input class="password" type="password" name="password" placeholder="Password..." value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>" <?php 
+            if(isset($_POST['password'])){
+                $password = $_POST['password'];
+                if(strlen($password) < 3){
+                    echo 'id="highlight"';
+                }
+            }?>><br>            
+            
             <input class="signin" type="submit" name="signin" value="Sign in">
         </form> 
 
-        <h5><a href="signup.php">Don't have an account? Sign up</a></h5> 
+        <h5 class="account"><a href="signup.php">Don't have an account? Sign up</a></h5> 
 
         <?php
         session_start();
@@ -46,11 +60,11 @@
                     exit();
                 }
                 else{
-                    echo "Incorrect password!";
+                    ?><h5> Incorrect password! </h5><?php
                 }
             }
             else{
-                echo("Username does not exist!");
+                ?><h5> Username does not exist! </h5><?php
 
             }            
         }

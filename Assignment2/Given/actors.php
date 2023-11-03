@@ -10,6 +10,10 @@
     <?php
     require_once 'pdo.php';
 
+    ?>
+    <h1 class="create">Actors List</h1>
+    <?php
+
     session_start();
     if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
         header("Location: Assignment/signin.php");
@@ -39,16 +43,18 @@
         echo $actor['first_name'] . " " . $actor['last_name'] . "</a></td></tr>";
     }
 
-    echo "</table><br>";
-    $nbPages = (int) ($nbActors / 10);
-    if ($nbActors % 10 != 0)
-        $nbPages++;
-    echo '<br>Pages: ';
-    for ($i = 0; $i < $nbPages; $i++) {
-        echo '<a href="actors.php?pageIndex=' . $i . '">' . ($i + 1) . '</a> ';
-    }
+    echo "</table><br>";?>
 
-    ?>
+    <div><?php
+        $nbPages = (int) ($nbActors / 10);
+        if ($nbActors % 10 != 0)
+            $nbPages++;
+        echo '<br>Pages: ';
+        for ($i = 0; $i < $nbPages; $i++) {
+            echo '<a href="actors.php?pageIndex=' . $i . '">' . ($i + 1) . '</a> ';
+        }
+        ?>
+    </div>
 </body>
 
 </html>

@@ -2,47 +2,45 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css?<?php echo time() ?>" />
+        <link rel="stylesheet" href="signup.css?<?php echo time() ?>" />
         <title>Sign up</title>
-
-        <style>
-            .highlight {border: 1px solid red;}
-        </style>
 
     </head>
 
     <?php require_once("pdo.php");?>
 
     <body>
-        <h1>Welcome</h1>
+        <h1>Create your account</h1>
 
         <form method = "POST" action="signup.php">
-            <input type="text" name="username" placeholder="Username" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" <?php 
+            <input class="email" type="text" name="username" placeholder="Username..." value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" <?php 
             if(isset($_POST['username'])){
                 $username = $_POST['username'];
                 if(strlen($username) < 3){
-                    echo 'class="highlight"';
+                    echo 'id="highlight"';
                 }
-            }?>>
+            }?>><br>
             
-            <input type="text" name="password" placeholder="Password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>" <?php 
+            <input class="password" type="password" name="password" placeholder="Password..." value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>" <?php 
             if(isset($_POST['password'])){
                 $password = $_POST['password'];
                 if(strlen($password) < 3){
-                    echo 'class="highlight"';
+                    echo 'id="highlight"';
                 }
-            }?>> 
+            }?>><br>
 
-            <input type="text" name="confirmation" placeholder="Password"<?php 
+            <input class="confirm" type="password" name="confirmation" placeholder="Confirm password..." value="<?php echo isset($_POST['confirmation']) ? $_POST['confirmation'] : ''; ?>"<?php 
             if(isset($_POST['confirmation'])){
                 $confirmation = $_POST['confirmation'];
                 if($password !== $confirmation){
-                    echo 'class="highlight"';
+                    echo 'id="highlight"';
                 }
-            }?>>             
+            }?>><br>         
             
-            <input type="submit" name="signup" value="Sign up">
+            <input class="signup" type="submit" name="signup" value="Sign up">
         </form> 
+
+        <h5 class="account"><a href="signin.php">Already have an account? Sign in</a></h5> 
 
         <?php
         session_start();
@@ -53,16 +51,16 @@
             $confirmation = $_POST["confirmation"];
 
             if(strlen($username) < 3 && strlen($password) < 3){
-                echo "Your username and password are too short!";
+                ?><h5> Your username and password are too short! </h5><?php
             }
             elseif(strlen($username) < 3){
-                echo "Your username is too short!";
+                ?><h5> Your username is too short! </h5><?php
             }
             elseif(strlen($password) < 3){
-                echo "Your password is too short!";
+                ?><h5> Your password is too short! </h5><?php
             }
             elseif($password != $confirmation){
-                echo "Incorrect password confirmation!";
+                ?><h5> Incorrect password confirmation! </h5><?php
             }
             else{
 

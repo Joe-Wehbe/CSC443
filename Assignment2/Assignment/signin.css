@@ -7,6 +7,14 @@ h1, h3{
 }
 
 h5{
+    margin-top: -24em;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.account{
     text-align: center;
     margin-top: 2em;
     color: rgb(94, 140, 205);
@@ -26,6 +34,10 @@ form{
     border-radius: 10px;
     border-color: rgb(94, 140, 205);
     padding-left: 10px;
+}
+
+#highlight {
+    border: 1px solid red;
 }
 
 .email::placeholder, .password::placeholder{
