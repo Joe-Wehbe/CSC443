@@ -29,7 +29,7 @@
 
         <tr><td><a href="../Given/countries.php">View Countries</a></td></tr>
         <tr><td><a href="../Given/actors.php">View Actors</a></td></tr>
-        <tr><td><a href="signin.php">Log Out</a></td></tr>
+        <tr><td><a href="logout.php">Log Out</a></td></tr>
 
     </table>
 

@@ -6,7 +6,8 @@
         <title>Sign in</title>
     </head>
 
-    <?php require_once("pdo.php");?>
+    <?php require_once("pdo.php");
+    session_start();?>
 
     <body>
         <h1>Sign into your account</h1>
@@ -34,7 +35,6 @@
         <h5 class="account"><a href="signup.php">Don't have an account? Sign up</a></h5> 
 
         <?php
-        session_start();
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){
 

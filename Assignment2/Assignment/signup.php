@@ -7,7 +7,8 @@
 
     </head>
 
-    <?php require_once("pdo.php");?>
+    <?php require_once("pdo.php");
+    session_start();?>
 
     <body>
         <h1>Create your account</h1>
@@ -43,7 +44,6 @@
         <h5 class="account"><a href="signin.php">Already have an account? Sign in</a></h5> 
 
         <?php
-        session_start();
         if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $username = $_POST["username"];
