@@ -7,6 +7,8 @@
         <title>Menu</title>
     </head>
 
+    <?php require_once("pdo.php");?>
+
     <?php
     session_start();
     if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {

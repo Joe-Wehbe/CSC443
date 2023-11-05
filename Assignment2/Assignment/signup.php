@@ -70,7 +70,7 @@
                 $result = $stm->fetch(PDO::FETCH_ASSOC);
     
                 if($result['user_count'] > 0){
-                    echo "Username already exists!";
+                    ?><h5> Username already exists! </h5><?php
                 }
                 else{
                     $password = password_hash($password, PASSWORD_BCRYPT);
@@ -81,7 +81,7 @@
                     
                     $_SESSION['authenticated'] = true;
                     $_SESSION['username'] = $username;
-                    header("Location: ../Given/actors.php");
+                    header("Location: menu.php");
                     exit();
                 }
             }       
