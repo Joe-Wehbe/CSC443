@@ -9,5 +9,6 @@ This assignment consists of developing a billboard simulator using `php`, `html`
 |![Screenshot 2023-11-02 132000](https://github.com/Joe-Wehbe/CSC443/assets/102875229/72e22aa7-3bfe-456f-9876-5d7923b3f49e)|![Screenshot 2023-11-02 132737](https://github.com/Joe-Wehbe/CSC443/assets/102875229/83ff5ef4-66f1-4e1f-8b7b-8b7f95fc99de)|
 
 ## Assignment 2
-This assignment consists of implementing a sign in/sign up system that restricts access for non-authenticated users to the features that are in the `Given` folder, which are implemented and provided by the course instructor. Additional security features are required to be implemented in this assignment such as URL manipulation prevention and password hashing. You can access instructions under the `Given` and `Assignment` folders for further details. You can download the `sakila` database under the `Database` folder.
+This assignment consists of implementing a sign in/sign up system that restricts access for non-authenticated users to the features that are in the `Given` folder, which are implemented and provided by the course instructor. Additional security features are required to be implemented in this assignment such as URL manipulation prevention and password hashing. You can access the instructions under the `Given` and `Assignment` folders for further details. You can download the `sakila` database under the `Database` folder.
 
+## Assignment 3
