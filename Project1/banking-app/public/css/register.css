@@ -11,49 +11,70 @@ body {
     display: flex; /* Use flexbox to arrange image and form side by side */
     align-items: center; /* Center items vertically within the card */
     padding: 20px;
-    width: 75%;
+    width: 70%;
     height: 75%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     background-color: #E3ECFB;
 }
 
-.statement{
-    margin-left: 40px;
-    margin-top: -50px;
+.left-side-container{
+    margin-left: 10px;
 }
 
-.statement h3{
+.statement1{
+    margin-left: 40px;
+    margin-top: -90px;
+}
+
+.statement1 h3{
     color: gray;
     margin-left: 10px;
     margin-top: -10px;
 }
 
+.statement2 h4{
+    color: gray;
+    margin-top: -10px;
+}
+
 img {
     padding: 30px;
-    width: 500px;
+    width: 450px;
     height: auto;
     max-width: 100%; /* Make the image responsive */
 
 }
 
 .right-side-container{
-    margin-left: 100px;
+    margin-left: 80px;
+    width: 400px;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center items horizontally within the form */
+    width: 100%;
+    padding-top: 20px;
 }
 
 input {
     margin-bottom: 10px;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+}
+
+input:hover{
+    border-color: #0055f9;
 }
 
 input[type="submit"] {
+    width: 30%;
+    text-align: center;
     background-color: #0055f9;
     color: white;
     cursor: pointer;

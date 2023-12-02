@@ -4,27 +4,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
 </head>
 
 <body>
+    <!-- <i class="fa fa-user"></i> -->
     <div class="card">
         <div class="left-side-container">
-            <div class="statement">
+            <div class="statement1">
                 <h1> Welcome to your virtual bank </h1>
                 <h3> A place that makes your financial life easier</h3>
             </div>  
-            <img src="{{ asset('images/banking-illustration.png') }}" alt="Your Image">
+            <img src="{{ asset('images/banking-illustration.png') }}" alt="Img">
         </div>
 
         <div class="right-side-container">
-            <h2> Create an account </h2>
+            <div class="statement2">
+                <h2> Create an account </h2>
+                <h4> Take the first step towards secure and convenient banking <h4>
+            </div>
             <form action="/register" method="POST">
                 <input type="text" name="fname" placeholder="First name">
                 <input type="text" name="lname" placeholder="Last name">
                 <input type="email" name="email" placeholder="Email">
                 <input type="password" name="password" placeholder="Password">
-                <input type="password" name="cpassword" placeholder="Confirm password">
+                <input type="password" name="cpassword" placeholder="Confirm password"><br>
                 <input type="submit" name="submit" value="Register">
+                <a href=signin>Already a member? Login </a>
             </form>
         <div>
     </div>
