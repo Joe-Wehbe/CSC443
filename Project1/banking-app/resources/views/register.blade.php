@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!-- <i class="fa fa-user"></i> -->
     <div class="card">
         <div class="left-side-container">
             <div class="statement1">
@@ -25,11 +24,26 @@
                 <h4> Take the first step towards secure and convenient banking <h4>
             </div>
             <form action="/register" method="POST">
-                <input type="text" name="fname" placeholder="First name">
-                <input type="text" name="lname" placeholder="Last name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="password" name="cpassword" placeholder="Confirm password"><br>
+                <div class="input-container">
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="fname" placeholder="First name">
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-users"></i>                    
+                <input type="text" name="lname" placeholder="Family name">
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-lock"></i>                    
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-check"></i>                    
+                    <input type="password" name="cpassword" placeholder="Confirm password"><br>
+                </div>
                 <input type="submit" name="submit" value="Register">
                 <a href=signin>Already a member? Login </a>
             </form>

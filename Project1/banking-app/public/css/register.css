@@ -4,49 +4,44 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #F2F5FB;
+    padding: 0;
 }
 
 .card {
-    display: flex; /* Use flexbox to arrange image and form side by side */
-    align-items: center; /* Center items vertically within the card */
+    display: flex;
+    align-items: center;
     padding: 20px;
     width: 70%;
     height: 75%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    background-color: #E3ECFB;
+    background-color: #e3ecfb;
 }
 
-.left-side-container{
+.left-side-container {
     margin-left: 10px;
 }
 
-.statement1{
+.statement1 {
     margin-left: 40px;
     margin-top: -90px;
 }
 
-.statement1 h3{
+.statement1 h3,
+.statement2 h4 {
     color: gray;
     margin-left: 10px;
-    margin-top: -10px;
-}
-
-.statement2 h4{
-    color: gray;
     margin-top: -10px;
 }
 
 img {
     padding: 30px;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: auto;
-    max-width: 100%; /* Make the image responsive */
-
 }
 
-.right-side-container{
+.right-side-container {
     margin-left: 80px;
     width: 400px;
 }
@@ -54,7 +49,7 @@ img {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally within the form */
+    align-items: center;
     width: 100%;
     padding-top: 20px;
 }
@@ -65,10 +60,15 @@ input {
     border: 1px solid #ccc;
     border-radius: 8px;
     height: 40px;
-    width: 100%;
+    width: calc(100% - 16px);
 }
 
-input:hover{
+.input-container input {
+    padding-left: 35px;
+}
+
+input:hover,
+input[type="submit"] {
     border-color: #0055f9;
 }
 
@@ -78,9 +78,27 @@ input[type="submit"] {
     background-color: #0055f9;
     color: white;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 input[type="submit"]:hover {
-    background-color: #1252CB;
+    background-color: #1252cb;
 }
 
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px;
+    color: #ccc;
+    margin-top: -10px;
+}
+
+.input-container:hover input {
+    border-color: #0055f9;
+}
