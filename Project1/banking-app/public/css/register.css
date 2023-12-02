@@ -4,6 +4,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-color: #F2F5FB;
 }
 
 .card {
@@ -14,12 +15,30 @@ body {
     height: 75%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+    background-color: #E3ECFB;
+}
+
+.statement{
+    margin-left: 40px;
+    margin-top: -50px;
+}
+
+.statement h3{
+    color: gray;
+    margin-left: 10px;
+    margin-top: -10px;
 }
 
 img {
     padding: 30px;
     width: 500px;
-    height: 400px;
+    height: auto;
+    max-width: 100%; /* Make the image responsive */
+
+}
+
+.right-side-container{
+    margin-left: 100px;
 }
 
 form {
@@ -43,3 +62,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #1252CB;
 }
+
