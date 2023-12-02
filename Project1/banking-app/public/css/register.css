@@ -7,11 +7,19 @@ body {
 }
 
 .card {
+    display: flex; /* Use flexbox to arrange image and form side by side */
+    align-items: center; /* Center items vertically within the card */
     padding: 20px;
-    width: 85%;
+    width: 75%;
     height: 75%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+}
+
+img {
+    padding: 30px;
+    width: 500px;
+    height: 400px;
 }
 
 form {
@@ -27,13 +35,11 @@ input {
 }
 
 input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #0055f9;
     color: white;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #1252CB;
 }
-
-
