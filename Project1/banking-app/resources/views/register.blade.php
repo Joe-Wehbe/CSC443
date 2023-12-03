@@ -10,7 +10,7 @@
 <body style="background-image: url('{{ asset('images/background1.jpg') }}');">
     <nav>
         <div class="nav-container">
-            <a class="title"> Banking Application </a>
+            <a class="title"> Creating an account </a>
             <a href="/">Signup</a>
             <a href="/login">Signin</a>
             <a href="#">About</a>

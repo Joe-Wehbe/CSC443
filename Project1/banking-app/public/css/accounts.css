@@ -1,3 +1,36 @@
+nav {
+  background-color: #D3E2FA;
+  padding: 13px;
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.title{
+  margin-right: auto; 
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.nav-container a {
+  color: black;
+  text-decoration: none;
+  padding-left: 25px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #0055f9;
+}
+
+
+
+
 /* Style for the card container */
 .card {
     width: 300px;
@@ -42,22 +75,3 @@
     font-family: Arial, sans-serif;
   }
 
-  /* Navigation bar styles */
-  nav {
-    background-color: #333;
-    padding: 10px;
-  }
-
-  /* Navigation links styles */
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 10px;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-
-  nav a:hover {
-    color: #ffd700; /* Change color on hover */
-  }

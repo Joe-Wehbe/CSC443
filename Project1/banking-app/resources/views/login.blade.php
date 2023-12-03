@@ -10,7 +10,7 @@
 <body style="background-image: url('{{ asset('images/background1.jpg') }}');">
     <nav>
         <div class="nav-container">
-            <a class="title"> Banking Application </a>
+            <a class="title"> Logging in </a>
             <a href="/">Signup</a>
             <a href="/login">Signin</a>
             <a href="#">About</a>
@@ -42,7 +42,7 @@
                         <input type="password" name="password" placeholder="Password">
                     </div>
                     <input type="submit" name="submit" value="Login">
-                    <a href="/login">Don't have an account? Register </a>
+                    <a href="/">Don't have an account? Register </a>
                 </form>
             </div>
         </div>

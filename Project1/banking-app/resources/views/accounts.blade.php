@@ -8,10 +8,12 @@
 <body>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <div class="nav-container">
+            <a class="title"> Your Accounts </a>
+            <a href="/">Home</a>
+            <a href="/login">About</a>
+            <a href="#">Logout</a>
+        </div>
     </nav>
 
     <div class="card">

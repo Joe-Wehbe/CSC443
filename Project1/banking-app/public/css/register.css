@@ -11,14 +11,14 @@ nav {
 
 .nav-container{
     display: flex;
-    justify-content: space-between; /* Adjust as needed */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
     padding-right: 10px;
 }
 
 .title{
     margin-right: auto; 
-    font-family: 'Roboto', sans-serif; /* Apply Roboto font to the nav */
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -31,7 +31,7 @@ nav {
 }
 
 nav a:hover {
-    color: #0055f9; /* Change color on hover */
+    color: #0055f9;
 }
 
 
