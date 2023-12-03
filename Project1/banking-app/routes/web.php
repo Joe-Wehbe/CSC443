@@ -17,9 +17,10 @@ Route::get('/', function () {
     return view('register');
 });
 
-Route::get("/register", function () {
-});
-
 Route::get("/login", function () {
     return view('login');
+});
+
+Route::get("/accounts", function () {
+    return view('accounts');
 });

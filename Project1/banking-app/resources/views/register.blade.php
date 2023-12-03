@@ -8,45 +8,56 @@
 </head>
 
 <body style="background-image: url('{{ asset('images/background1.jpg') }}');">
-    <div class="card">
-        <div class="left-side-container">
-            <div class="statement1">
-                <h1> Welcome to your virtual bank </h1>
-                <h3> A place that makes your financial life easier</h3>
-            </div>  
-            <img src="{{ asset('images/banking-illustration.png') }}" alt="Img">
+    <nav>
+        <div class="nav-container">
+            <a class="title"> Banking Application </a>
+            <a href="/">Signup</a>
+            <a href="/login">Signin</a>
+            <a href="#">About</a>
         </div>
+    </nav>
+    <div class="container">
 
-        <div class="right-side-container">
-            <div class="statement2">
-                <h2> Create an account </h2>
-                <h4> Take the first step towards secure and convenient banking <h4>
+        <div class="card">
+            <div class="left-side-container">
+                <div class="statement1">
+                    <h1> Welcome to your virtual bank </h1>
+                    <h3> A place that makes your financial life easier</h3>
+                </div>  
+                <img src="{{ asset('images/banking-illustration.png') }}" alt="Img">
             </div>
-            <form action="/register" method="POST">
-                <div class="input-container">
-                    <i class="fa fa-user"></i>
-                    <input type="text" name="fname" placeholder="First name">
+
+            <div class="right-side-container">
+                <div class="statement2">
+                    <h2> Create an account </h2>
+                    <h4> Take the first step towards secure and convenient banking <h4>
                 </div>
-                <div class="input-container">
-                    <i class="fa-solid fa-users"></i>                    
-                <input type="text" name="lname" placeholder="Family name">
-                </div>
-                <div class="input-container">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email">
-                </div>
-                <div class="input-container">
-                    <i class="fa-solid fa-lock"></i>                    
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-                <div class="input-container">
-                    <i class="fa-solid fa-circle-check"></i>                    
-                    <input type="password" name="cpassword" placeholder="Confirm password"><br>
-                </div>
-                <input type="submit" name="submit" value="Register">
-                <a href="/login">Already a member? Login </a>
-            </form>
-        <div>
+                <form action="/register" method="POST">
+                    <div class="input-container">
+                        <i class="fa fa-user"></i>
+                        <input type="text" name="fname" placeholder="First name">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa-solid fa-users"></i>                    
+                    <input type="text" name="lname" placeholder="Family name">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa-solid fa-lock"></i>                    
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa-solid fa-circle-check"></i>                    
+                        <input type="password" name="cpassword" placeholder="Confirm password"><br>
+                    </div>
+                    <input type="submit" name="submit" value="Register">
+                    <a href="/login">Already a member? Login </a>
+                </form>
+            </div>
+        </div>
     </div>
     
 </body>

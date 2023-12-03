@@ -1,0 +1,63 @@
+/* Style for the card container */
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style for the card image */
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Style for the card content */
+  .card-content {
+    padding: 16px;
+  }
+
+  /* Style for the card title */
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  /* Style for the card description */
+  .card-description {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  /* Navigation bar styles */
+  nav {
+    background-color: #333;
+    padding: 10px;
+  }
+
+  /* Navigation links styles */
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ffd700; /* Change color on hover */
+  }
