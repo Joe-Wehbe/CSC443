@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 nav {
   background-color: #D3E2FA;
   padding: 13px;
@@ -12,8 +16,6 @@ nav {
 
 .title{
   margin-right: auto; 
-  font-family: 'Roboto', sans-serif;
-
 }
 
 .nav-container a {
@@ -28,50 +30,75 @@ nav a:hover {
   color: #0055f9;
 }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 50%;
+  height: 60px;
+  padding-left: 60px;
+  padding-right: 15px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  outline: none;
+}
+
+input:hover{
+  border-color: #0055f9;
+}
+
+.search-container i {
+  position: relative;
+  font-size: 25px;
+  left: 45px;
+  top: 16px;
+  color: gray;
+}
 
 
+
+.cards-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  margin-top: 20px;
+}
 
 /* Style for the card container */
 .card {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+  flex: 0 0 calc(30% - 100px); /* Calculate width for three items per row */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
 
-  /* Style for the card image */
-  .card img {
-    width: 100%;
-    height: auto;
-  }
+/* Style for the card content */
+.card-content {
+  padding: 16px;
+}
 
-  /* Style for the card content */
-  .card-content {
-    padding: 16px;
-  }
+/* Style for the card title */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
 
-  /* Style for the card title */
-  .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
+/* Style for the card description */
+.card-description {
+  font-size: 1rem;
+  color: #555;
+}
 
-  /* Style for the card description */
-  .card-description {
-    font-size: 1rem;
-    color: #555;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 

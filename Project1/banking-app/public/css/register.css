@@ -1,4 +1,5 @@
 body {
+    font-family: 'Roboto', sans-serif;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -18,8 +19,6 @@ nav {
 
 .title{
     margin-right: auto; 
-    font-family: 'Roboto', sans-serif;
-
 }
 
 .nav-container a {
