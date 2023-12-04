@@ -3,6 +3,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  background-color:#F6F6F8;
 }
 
 /************** Nav Bar **************/
@@ -124,7 +125,7 @@ input:hover{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-  background-color: #F2F3F5;
+  background-color: #E4E4E6;
 }
 
 .card:hover{
@@ -157,7 +158,7 @@ input:hover{
 
 .balance, .currency, .date {
   font-size: 1rem;
-  color: #555;
+  color: black;
 }
 
 .balance-value, .currency-value, .date-value {

@@ -24,3 +24,7 @@ Route::get("/login", function () {
 Route::get("/accounts", function () {
     return view('accounts');
 });
+
+Route::get("/pending", function () {
+    return view('pending');
+});
