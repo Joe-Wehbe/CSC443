@@ -21,9 +21,8 @@
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search accounts...">
 
-                <button class="button">Create Account</button>
-                <button class="button1">Pending Accounts</button>
-
+                <a href="#" class="button">Create Account</a>
+                <a href="/pending" class="button1">Pending Accounts</a>
 
             </div><br>
 
