@@ -44,7 +44,7 @@
                             <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <i class="fa-solid fa-calendar-days"></i> Creation date:
                             <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
@@ -61,7 +61,7 @@
                             <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <i class="fa-solid fa-calendar-days"></i> Creation date:
                             <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
@@ -78,7 +78,7 @@
                             <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <i class="fa-solid fa-calendar-days"></i> Creation date:
                             <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
@@ -95,7 +95,7 @@
                             <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <i class="fa-solid fa-calendar-days"></i> Creation date:
                             <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
