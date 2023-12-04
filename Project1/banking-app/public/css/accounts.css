@@ -1,6 +1,11 @@
 body {
   font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
+
+/************** Nav Bar **************/
 
 nav {
   background-color: #D3E2FA;
@@ -29,6 +34,8 @@ nav {
 nav a:hover {
   color: #0055f9;
 }
+
+/************** Search Bar **************/
 
 .search-container {
   display: flex;
@@ -60,45 +67,47 @@ input:hover{
   color: gray;
 }
 
-
+/************** CARD **************/
 
 .cards-container{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap; 
   margin-top: 20px;
 }
 
-/* Style for the card container */
 .card {
-  flex: 0 0 calc(30% - 100px); /* Calculate width for three items per row */
+  flex: 0 0 calc(30% - 100px);
   border: 1px solid #ccc;
   border-radius: 8px;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-/* Style for the card content */
+.card:hover{
+  transform: scale(1.05); /* Increase the scale on hover */
+}
+
 .card-content {
   padding: 16px;
 }
 
-/* Style for the card title */
 .card-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-/* Style for the card description */
-.card-description {
+.balance, .currency, .date {
   font-size: 1rem;
   color: #555;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+} */
 
