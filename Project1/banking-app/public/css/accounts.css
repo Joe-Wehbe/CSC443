@@ -68,7 +68,22 @@ input:hover{
   color: gray;
 }
 
+/************** Buttons **************/
+
 .button{
+  position: absolute;
+  text-align: center;
+  background-color: #0055f9;
+  color: white;
+  cursor: pointer;
+  border-radius: 15px;
+  height: 3.5em;
+  border: none;
+  margin-top: 5px;
+  margin-left: 82em;
+}
+
+.button1{
   position: absolute;
   text-align: center;
   background-color: #0055f9;
@@ -81,7 +96,7 @@ input:hover{
   margin-left: 100em;
 }
 
-.button:hover{
+.button:hover, .button1:hover{
   background-color: #1252cb;
 }
 

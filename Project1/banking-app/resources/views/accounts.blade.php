@@ -22,6 +22,8 @@
                 <input type="text" placeholder="Search accounts...">
 
                 <button class="button">Create Account</button>
+                <button class="button1">Pending Accounts</button>
+
 
             </div><br>
 
