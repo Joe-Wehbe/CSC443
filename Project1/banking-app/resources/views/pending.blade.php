@@ -28,15 +28,18 @@
             </div><br>
 
             <div class="statement">
-                <p>2 Pending Accounts <p>
+                <p>3 Bank Accounts <p>
+                <p class="statement1">Please be patient, an agent is reviewing your account creation request.</p>
             </div>
 
             <div class="cards-container">
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-title">First account</div>
+                        <div class="card-title">First account
+                            <span class="status-pending">Pending</span>
+                        </div>
                         <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
+                            <i class="fa-solid fa-coins"></i> Initial Balance:
                             <span class="balance-value">30000</span>
                         </p>
                         <p class="currency">
@@ -51,9 +54,30 @@
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-title">Personal account</div>
+                        <div class="card-title">Personal account
+                            <span class="status-accepted">Accepted</span>
+                        </div>
                         <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
+                            <i class="fa-solid fa-coins"></i> Initial Balance:
+                            <span class="balance-value">30000</span>
+                        </p>
+                        <p class="currency">
+                            <i class="fa-solid fa-dollar-sign"></i> Currency:
+                            <span class="currency-value">USD</span>
+                        </p>
+                        <p class="date">
+                            <i class="fa-solid fa-calendar-days"></i> Creation date:
+                            <span class="date-value">N/A</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">First account
+                            <span class="status-rejected">Rejected</span>
+                        </div>
+                        <p class="balance">
+                            <i class="fa-solid fa-coins"></i> Initial Balance:
                             <span class="balance-value">30000</span>
                         </p>
                         <p class="currency">

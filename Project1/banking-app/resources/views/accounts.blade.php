@@ -29,6 +29,7 @@
 
             <div class="statement">
                 <p>4 Bank Accounts <p>
+                <p class="statement1">Click on an account for transaction details.</p>
             </div>
 
             <div class="cards-container">
@@ -58,7 +59,7 @@
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
+                            <span class="currency-value">EUR</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Creation date:
@@ -75,7 +76,7 @@
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
+                            <span class="currency-value">LBP</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Creation date:

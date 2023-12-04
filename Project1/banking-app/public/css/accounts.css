@@ -108,6 +108,11 @@ input:hover{
   font-size: 20px;
 }
 
+.statement1{
+  font-size: 16px;
+  color: gray;
+}
+
 /************** CARD **************/
 
 .cards-container{
