@@ -53,6 +53,7 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 40px;
   outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 input:hover{
@@ -65,6 +66,13 @@ input:hover{
   left: 45px;
   top: 16px;
   color: gray;
+}
+
+/************** STMT **************/
+
+.statement{
+  text-align: center;
+  font-size: 20px;
 }
 
 /************** CARD **************/
@@ -83,11 +91,12 @@ input:hover{
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover{
-  transform: scale(1.05); /* Increase the scale on hover */
+  transform: scale(1.05);
+  background-color: #D3E2FA;
 }
 
 .card-content {
@@ -103,6 +112,9 @@ input:hover{
 .balance, .currency, .date {
   font-size: 1rem;
   color: #555;
+}
+
+p {
 }
 
 /* * {

@@ -20,39 +20,67 @@
             <div class="search-container">
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search accounts...">
+            </div><br>
+
+            <div class="statement">
+                <p>4 Bank Accounts <p>
             </div>
 
             <div class="cards-container">
-                <div class="card">
+            <div class="card">
                     <div class="card-content">
                         <div class="card-title">Work account</div>
-                        <p class="balance">20000</p>
-                        <p class="currency">Dollar</p>
-                        <p class="date">20-10-2021</p>
+                        <p class="balance">
+                            <i class="fa-solid fa-coins"></i> Balance:
+                        </p>
+                        <p class="currency">
+                            <i class="fa-solid fa-dollar-sign"></i> Currency:
+                        </p>
+                        <p class="date">
+                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                        </p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">Work account</div>
-                        <p class="balance">20000</p>
-                        <p class="currency">Dollar</p>
-                        <p class="date">20-10-2021</p>
+                        <p class="balance">
+                            <i class="fa-solid fa-coins"></i> Balance:
+                        </p>
+                        <p class="currency">
+                            <i class="fa-solid fa-dollar-sign"></i> Currency:
+                        </p>
+                        <p class="date">
+                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                        </p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">Work account</div>
-                        <p class="balance">20000</p>
-                        <p class="currency">Dollar</p>
-                        <p class="date">20-10-2021</p>
+                        <p class="balance">
+                            <i class="fa-solid fa-coins"></i> Balance:
+                        </p>
+                        <p class="currency">
+                            <i class="fa-solid fa-dollar-sign"></i> Currency:
+                        </p>
+                        <p class="date">
+                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                        </p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">Work account</div>
-                        <p class="balance">20000</p>
-                        <p class="currency">Dollar</p>
-                        <p class="date">20-10-2021</p>
+                        <p class="balance">
+                            <i class="fa-solid fa-coins"></i> Balance:
+                        </p>
+                        <p class="currency">
+                            <i class="fa-solid fa-dollar-sign"></i> Currency:
+                        </p>
+                        <p class="date">
+                            <i class="fa-solid fa-calendar-days"></i> Created date:
+                        </p>
                     </div>
                 </div>
             </div>
