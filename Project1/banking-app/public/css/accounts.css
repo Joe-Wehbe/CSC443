@@ -109,6 +109,7 @@ input:hover{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  background-color: #F2F3F5;
 }
 
 .card:hover{
@@ -129,4 +130,9 @@ input:hover{
 .balance, .currency, .date {
   font-size: 1rem;
   color: #555;
+}
+
+.balance-value, .currency-value, .date-value {
+  display: inline;
+  float: right; 
 }

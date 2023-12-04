@@ -10,7 +10,7 @@
         <nav>
             <div class="nav-container">
                 <a class="title"> Your Accounts </a>
-                <a href="/">Home</a>
+                <a href="/accounts">Home</a>
                 <a href="">About</a>
                 <a href="#">Logout</a>
             </div>
@@ -30,17 +30,20 @@
             </div>
 
             <div class="cards-container">
-            <div class="card">
+                <div class="card">
                     <div class="card-content">
                         <div class="card-title">Work account</div>
                         <p class="balance">
                             <i class="fa-solid fa-coins"></i> Balance:
+                            <span class="balance-value">30000</span>
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
+                            <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
                 </div>
@@ -49,12 +52,15 @@
                         <div class="card-title">Work account</div>
                         <p class="balance">
                             <i class="fa-solid fa-coins"></i> Balance:
+                            <span class="balance-value">30000</span>
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
+                            <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
                 </div>
@@ -63,12 +69,15 @@
                         <div class="card-title">Work account</div>
                         <p class="balance">
                             <i class="fa-solid fa-coins"></i> Balance:
+                            <span class="balance-value">30000</span>
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
+                            <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
                 </div>
@@ -77,12 +86,15 @@
                         <div class="card-title">Work account</div>
                         <p class="balance">
                             <i class="fa-solid fa-coins"></i> Balance:
+                            <span class="balance-value">30000</span>
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
+                            <span class="currency-value">USD</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Created date:
+                            <span class="date-value">30-8-2021</span>
                         </p>
                     </div>
                 </div>
