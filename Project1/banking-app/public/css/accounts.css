@@ -68,6 +68,23 @@ input:hover{
   color: gray;
 }
 
+.button{
+  position: absolute;
+  text-align: center;
+  background-color: #0055f9;
+  color: white;
+  cursor: pointer;
+  border-radius: 15px;
+  height: 3.5em;
+  border: none;
+  margin-top: 5px;
+  margin-left: 100em;
+}
+
+.button:hover{
+  background-color: #1252cb;
+}
+
 /************** STMT **************/
 
 .statement{
@@ -113,13 +130,3 @@ input:hover{
   font-size: 1rem;
   color: #555;
 }
-
-p {
-}
-
-/* * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
-

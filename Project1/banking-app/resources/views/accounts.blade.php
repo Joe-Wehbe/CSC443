@@ -20,6 +20,9 @@
             <div class="search-container">
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search accounts...">
+
+                <button class="button">Create Account</button>
+
             </div><br>
 
             <div class="statement">
