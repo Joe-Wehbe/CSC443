@@ -30,10 +30,6 @@
                             <input type="text" name="fname" placeholder="First name">
                         </div>
                         <div class="input-container">
-                            <i class="fa-solid fa-users"></i>                    
-                        <input type="text" name="lname" placeholder="Family name">
-                        </div>
-                        <div class="input-container">
                             <i class="fa-solid fa-envelope"></i>
                             <input type="email" name="email" placeholder="Email">
                         </div>
@@ -41,35 +37,29 @@
                             <i class="fa-solid fa-lock"></i>                    
                             <input type="password" name="password" placeholder="Password">
                         </div>
-                        <input type="submit" name="submit" value="Register">
-                        <a href="/login">Already a member? Login </a>
+                        <input type="submit" name="submit" value="Verify">
                     </form>
                 </div>
 
                 <div class="right-side-container">
                     <div class="statement2">
                         <h2> Enter account information </h2>
-                        <h4>  <h4>
+                        <h4> Fill in the fields below to create your account<h4>
                     </div>
                     <form action="/register" method="POST">
                         <div class="input-container">
-                            <i class="fa fa-user"></i>
-                            <input type="text" name="fname" placeholder="Account name">
+                            <i class="fa-solid fa-file-invoice"></i>
+                            <input type="text" name="aname" placeholder="Account name">
                         </div>
                         <div class="input-container">
-                            <i class="fa-solid fa-users"></i>                    
-                        <input type="text" name="lname" placeholder="Initial balance">
+                            <i class="fa-solid fa-coins"></i>                    
+                        <input type="text" name="balance" placeholder="Initial balance">
                         </div>
                         <div class="input-container">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input type="email" name="email" placeholder="Currency">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <input type="email" name="currency" placeholder="Currency">
                         </div>
-                        <div class="input-container">
-                            <i class="fa-solid fa-lock"></i>                    
-                            <input type="password" name="password" placeholder="Password">
-                        </div>
-                        <input type="submit" name="submit" value="Register">
-                        <a href="/login">Already a member? Login </a>
+                        <input type="submit" name="submit" value="Create">
                     </form>
                 </div>
             </div>
