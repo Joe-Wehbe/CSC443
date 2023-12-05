@@ -32,3 +32,7 @@ Route::get("/pending", function () {
 Route::get("/create-account", function () {
     return view('create-account');
 });
+
+Route::get("/account-details", function () {
+    return view('account-details');
+});

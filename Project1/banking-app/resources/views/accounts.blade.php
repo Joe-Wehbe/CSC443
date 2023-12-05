@@ -102,6 +102,6 @@
                 </div>
             </div>
         </div>
-        
+        <script src="{{ asset('js/accounts.js') }}"></script>
     </body>
 </html>
