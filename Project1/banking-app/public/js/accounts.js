@@ -1,6 +1,6 @@
-var card = document.getElementsByClassName('card');
-for (var i = 0; i < card.length; i++) {
-    clickableCards[i].addEventListener('click', function() {
+var cards = document.getElementsByClassName('card');
+for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', function() {
         window.location.href = '/account-details';
     });
 }

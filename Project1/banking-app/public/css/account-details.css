@@ -1,0 +1,196 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color:#F6F6F8;
+  }
+  
+  /************** Nav Bar **************/
+  
+  nav {
+    background-color: #D3E2FA;
+    padding: 13px;
+  }
+  
+  .nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+  }
+  
+  .title{
+    margin-right: auto; 
+  }
+  
+  .nav-container a {
+    color: black;
+    text-decoration: none;
+    padding-left: 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #0055f9;
+  }
+  
+  /************** Search Bar **************/
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  input[type="text"] {
+    width: 50%;
+    height: 60px;
+    padding-left: 60px;
+    padding-right: 15px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    outline: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  input:hover{
+    border-color: #0055f9;
+  }
+  
+  .search-container i {
+    position: relative;
+    font-size: 25px;
+    left: 45px;
+    top: 16px;
+    color: gray;
+  }
+  
+  /************** Buttons **************/
+  
+  .button{
+    position: absolute;
+    text-align: center;
+    background-color: #1252cb;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    margin-left: 64em;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .button1{
+    position: absolute;
+    text-align: center;
+    background-color: #1252cb;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    margin-left: 60em;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 83em;
+    margin-top: 10px;
+  }
+  
+  .button:hover, .button1:hover{
+    background-color: #0055f9;
+  }
+  
+  /************** STMT **************/
+  
+  .statement{
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .statement1{
+    font-size: 16px;
+    color: gray;
+  }
+  
+  /************** CARD **************/
+  
+  .inner-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    margin-top: 20px;
+  }
+  
+  .card {
+    flex: 0 0 calc(30% - 100px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background-color: #E4E4E6;
+  }
+  
+  .card:hover{
+    transform: scale(1.05);
+    background-color: #D3E2FA;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .fa-coins{
+    color: gold;
+  }
+  
+  .fa-dollar-sign{
+    color: green;
+    margin-right: 4px;
+  }
+  
+  .fa-calendar-days{
+    color: red;
+  }
+  
+  .balance, .currency, .date {
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .balance-value, .currency-value, .date-value {
+    display: inline;
+    float: right; 
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .other-accounts-container{
+    display: flex;
+    flex-direction: column;
+  }
+  
