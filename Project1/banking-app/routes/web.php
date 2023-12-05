@@ -28,3 +28,7 @@ Route::get("/accounts", function () {
 Route::get("/pending", function () {
     return view('pending');
 });
+
+Route::get("/create-account", function () {
+    return view('create-account');
+});

@@ -119,14 +119,14 @@ input[type="submit"] {
 input[type="submit"] {
     width: 30%;
     text-align: center;
-    background-color: #0055f9;
+    background-color: #1252cb;
     color: white;
     cursor: pointer;
     margin-top: 20px;
 }
 
 input[type="submit"]:hover {
-    background-color: #1252cb;
+    background-color: #0055f9;
 }
 
 .input-container {
