@@ -2,12 +2,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Register</title>
+        <title>Create Bank Account</title>
         <link rel="stylesheet" href="{{ asset('css/create-account.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     </head>
 
-    <body style="background-image: url('{{ asset('images/background1.jpg') }}');">
+    <body>
         <nav>
             <div class="nav-container">
                 <a class="title"> Creating a bank account </a>
@@ -16,12 +16,15 @@
                 <a href="#">Logout</a>
             </div>
         </nav>
+        <div class="statement1">
+            <h1> Create a bank account </h1>
+            <h3> Your account will be created once an agent approves your request </h3>
+        </div>
         <div class="container">
-
             <div class="card">
                 <div class="left-side-container">
                     <div class="statement2">
-                        <h2> Verify your Identity </h2>
+                        <h2> Verify your identity </h2>
                         <h4> This is a necessary step for improved account security <h4>
                     </div>
                     <form action="/register" method="POST">
@@ -49,21 +52,24 @@
                     <form action="/register" method="POST">
                         <div class="input-container">
                             <i class="fa-solid fa-file-invoice"></i>
-                            <input type="text" name="aname" placeholder="Account name">
+                            <input type="text" name="account-name" placeholder="Account name">
                         </div>
                         <div class="input-container">
                             <i class="fa-solid fa-coins"></i>                    
-                        <input type="text" name="balance" placeholder="Initial balance">
+                            <input type="number" name="balance" placeholder="Initial balance">
                         </div>
                         <div class="input-container">
                             <i class="fa-solid fa-dollar-sign"></i>
-                            <input type="email" name="currency" placeholder="Currency">
+                            <select name="currency">
+                                <option value="lbp">LBP</option>
+                                <option value="usd">USD</option>
+                                <option value="eur">EUR</option>
+                            </select>
                         </div>
                         <input type="submit" name="submit" value="Create">
                     </form>
                 </div>
             </div>
-        </div>
-        
+        </div>     
     </body>
 </html>
