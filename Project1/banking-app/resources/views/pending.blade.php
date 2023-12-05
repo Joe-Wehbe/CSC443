@@ -21,7 +21,7 @@
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search accounts...">
 
-                <a href="#" class="button">Create Account</a>
+                <a href="/create-account" class="button">Create Account</a>
                 <a href="/accounts" class="button1">Your Accounts</a>
 
 
