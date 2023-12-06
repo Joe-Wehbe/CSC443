@@ -41,10 +41,14 @@ Route::get("/users", function () {
     return view('users');
 });
 
-Route::get("/requests", function () {
-    return view('requests');
+Route::get("/user-requests", function () {
+    return view('user-requests');
 });
 
 Route::get("/user-accounts", function () {
     return view('user-accounts');
+});
+
+Route::get("/user-account-details", function () {
+    return view('user-account-details');
 });

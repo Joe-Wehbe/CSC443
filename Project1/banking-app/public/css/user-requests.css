@@ -69,6 +69,8 @@ top: 16px;
 color: gray;
 }
 
+/************** Button **************/
+
 .button{
     position: absolute;
     text-align: center;
@@ -103,7 +105,7 @@ color: gray;
 /************** List **************/
 
 .user-list {
-    width: 60%;
+    width: 80%;
     margin: 50px auto;
     background-color: #fff;
     border-radius: 8px;
@@ -114,11 +116,6 @@ color: gray;
     list-style: none;
     padding: 0;
     margin: 0;
-    cursor: pointer;
-}
-
-a{
-    text-decoration: none;
 }
 
 .user-list-item {
@@ -126,10 +123,43 @@ a{
     border-bottom: 1px solid #ddd;
 }
 
-.user-list-item:hover {
-    background-color: #D3E2FA;
+.flex-container{
+    display: flex;
 }
 
-.email{
+.email, .account, .balance, .currency{
+    padding-left: 8em;
+}
+
+.buttons{
+    display: flex;
+    margin-left: 10em;
+}
+
+.fa-circle-check{
+    float: right;
+    font-size: 25px;
+    color: green;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.fa-xmark{
+    font-size: 25px;
+    float: right;
+    color: red;
+    padding-left: 20px;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.fa-circle-check:hover, .fa-xmark:hover{
+    transform: scale(1.2);
+
+}
+
+.username-value, .email-value, .account-value, .balance-value, .currency-value {
     color: gray;
 }
+
+

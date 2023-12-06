@@ -20,7 +20,7 @@
             <div class="search-container">
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search user...">
-                <a href="/requests" class="button">View account creation requests</a>
+                <a href="/user-requests" class="button">View account creation requests</a>
             </div><br>
 
             <div class="statement">
