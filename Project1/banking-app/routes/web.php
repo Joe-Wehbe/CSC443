@@ -36,3 +36,7 @@ Route::get("/create-account", function () {
 Route::get("/account-details", function () {
     return view('account-details');
 });
+
+Route::get("/users", function () {
+    return view('users');
+});
