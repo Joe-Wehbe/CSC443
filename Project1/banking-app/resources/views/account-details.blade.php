@@ -18,30 +18,69 @@
 
         <div class="container">
             <div class="search-container">
+
+                <button class="button2" onclick="openDepositModal()">Deposit</button>
+                <div id="deposit-modal-container">
+                    <div class="deposit-modal-content">
+                        <p>Enter the amount to deposit</p>
+                        <input type="number" name="deposit-amount" placeholder="Amount"></input>
+                        <button onclick="closeDepositModal()">Deposit</button>
+                    </div>
+                </div>
+
+
+                <button class="button3" onclick="openWithdrawModal()">Withdraw</button>
+                <div id="withdraw-modal-container">
+                    <div class="withdraw-modal-content">
+                        <p>Enter the amount to withdraw</p>
+                        <input type="number" name="withdraw-amount" placeholder="Amount"></input>
+                        <button onclick="closeWithdrawModal()">Withdraw</button>
+                    </div>
+                </div>
+
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search transaction date...">
 
-                <a href="/create-account" class="button">Create Account</a>
-                <a href="/pending" class="button1">Pending Accounts</a>
+                <button class="button" onclick="openModal()">Transfer to</button>
+                <div id="deposit-modal-container">
+                    <div class="deposit-modal-content">
+                        <p>Enter the amount to deposit</p>
+                        <input type="number" name="deposit-amount" placeholder="Amount"></input>
+                        <button onclick="closeDepositModal()">Deposit</button>
+                    </div>
+                </div>
+
+                <button class="button1" onclick="openModal()">Transfer from</button>
+                <div id="deposit-modal-container">
+                    <div class="deposit-modal-content">
+                        <p>Enter the amount to deposit</p>
+                        <input type="number" name="deposit-amount" placeholder="Amount"></input>
+                        <button onclick="closeDepositModal()">Deposit</button>
+                    </div>
+                </div>
+                
             </div>
 
             <div class="inner-container">
                 <div class="view-card">
+                    <span class="viewing">Viewing Account</span>
                     <div class="card-content"> 
-                        <div class="card-title">First account</div>
+                        <div class="card-title">First account
+                            <i class="fa-solid fa-trash" onclick="confirmDelete()"></i>
+                        </div>
 
                         <div class="personal-info">Personal information</div>
-                        <p class="balance">
+                        <p class="first-name">
                             <i class="fa fa-user"></i> 
                             <span class="fname">First Name:</span>
                             <span class="fname-value">Joe</span>
                         </p>
-                        <p class="currency">
+                        <p class="last-name">
                             <i class="fa-solid fa-users"></i>
                             <span class="lname">Last Name:</span>
                             <span class="lname-value">Wehbe</span>
                         </p>
-                        <p class="date">
+                        <p class="e-mail">
                             <i class="fa-solid fa-envelope"></i> 
                             <span class="email">Email:</span>
                             <span class="email-value">joe.wehbe@lau.edu</span>
@@ -97,44 +136,43 @@
                 </div>
 
                 <div class="other-accounts-container">Other accounts
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Personal account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">EUR</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">Personal account</div>
+                            <p class="balance">
+                                <i class="fa-solid fa-coins"></i> Balance:
+                                <span class="balance-value">30000</span>
+                            </p>
+                            <p class="currency">
+                                <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                <span class="currency-value">EUR</span>
+                            </p>
+                            <p class="date">
+                                <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                <span class="date-value">30-8-2021</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">First account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">First account</div>
+                            <p class="balance">
+                                <i class="fa-solid fa-coins"></i> Balance:
+                                <span class="balance-value">30000</span>
+                            </p>
+                            <p class="currency">
+                                <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                <span class="currency-value">USD</span>
+                            </p>
+                            <p class="date">
+                                <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                <span class="date-value">30-8-2021</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-
                 </div>
             </div>
         </div>
-        <script src="{{ asset('js/accounts.js') }}"></script>
+        <script src="{{ asset('js/account-details.js') }}"></script>
     </body>
 </html>

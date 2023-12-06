@@ -71,7 +71,7 @@ input:hover{
 
 /************** Buttons **************/
 
-.button{
+.button, .button1, .button2, .button3{
   position: absolute;
   text-align: center;
   background-color: #1252cb;
@@ -79,28 +79,29 @@ input:hover{
   cursor: pointer;
   border-radius: 15px;
   border: none;
-  margin-left: 64em;
   padding: 10px;
   text-decoration: none;
   margin-top: 10px;
+  width: 9em;
+}
+
+.button{
+  margin-left: 75em;
 }
 
 .button1{
-  position: absolute;
-  text-align: center;
-  background-color: #1252cb;
-  color: white;
-  cursor: pointer;
-  border-radius: 15px;
-  border: none;
-  margin-left: 60em;
-  padding: 10px;
-  text-decoration: none;
-  margin-left: 83em;
-  margin-top: 10px;
+  margin-left: 95em;
 }
 
-.button:hover, .button1:hover{
+.button2{
+  margin-right: 75em;
+}
+
+.button3{
+  margin-right: 95em;
+}
+
+.button:hover, .button1:hover, .button2:hover, .button3:hover{
   background-color: #0055f9;
 }
 
@@ -136,6 +137,7 @@ input:hover{
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   background-color: #E4E4E6;
+  width: 15em;
 }
 
 .view-card {
@@ -183,8 +185,16 @@ input:hover{
   color: black;
 }
 
-.fname, .email{
+.currency, .date{
+  margin-left: 2px;
+}
+
+.fname{
   margin-left: 5px;
+}
+
+.email{
+  margin-left: 3px;
 }
 
 .fname-value, .lname-value, .email-value, .balance-value, .currency-value, .date-value {
@@ -218,4 +228,38 @@ th {
 
 .fa-envelope, .fa-users, .fa-user{
   color: gray;
+}
+
+.fa-trash{
+  float: right;
+  color: gray;
+}
+
+.fa-trash:hover{
+  color: #0055f9;
+}
+
+.viewing{
+  position: absolute;
+  margin-top: -33px;
+}
+
+
+#deposit-modal-container, #withdraw-modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.deposit-modal-content, .withdraw-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
 }
