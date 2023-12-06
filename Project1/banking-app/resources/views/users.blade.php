@@ -21,10 +21,7 @@
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search user...">
                 <a href="/requests" class="button">View account creation requests</a>
-
             </div><br>
-
-
 
             <div class="statement">
                 <p>3 Users<p>
@@ -33,15 +30,21 @@
 
             <div class="user-list">
                 <ul class="user-list-items">
-                    <li class="user-list-item">John Doe <br>
-                        <span class="email">john.doe@lau.edu</span>
-                    </li>
-                    <li class="user-list-item">Jane Smith <br>
-                    <span class="email">john.doe@lau.edu</span>
-                    </li>
-                    <li class="user-list-item">Bob Johnson <br>
-                    <span class="email">john.doe@lau.edu</span>
-                    </li>
+                    <a href="/user-accounts">
+                        <li class="user-list-item">John Doe <br>
+                            <span class="email">john.doe@lau.edu</span>
+                        </li>
+                    </a>        
+                    <a href="/user-accounts">
+                        <li class="user-list-item">John Doe <br>
+                            <span class="email">john.doe@lau.edu</span>
+                        </li>
+                    </a> 
+                    <a href="/user-accounts">
+                        <li class="user-list-item">John Doe <br>
+                            <span class="email">john.doe@lau.edu</span>
+                        </li>
+                    </a> 
                 </ul>
             </div>
         </div>

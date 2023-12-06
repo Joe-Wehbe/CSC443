@@ -44,3 +44,7 @@ Route::get("/users", function () {
 Route::get("/requests", function () {
     return view('requests');
 });
+
+Route::get("/user-accounts", function () {
+    return view('user-accounts');
+});
