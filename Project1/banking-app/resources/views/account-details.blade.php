@@ -23,13 +23,31 @@
 
                 <a href="/create-account" class="button">Create Account</a>
                 <a href="/pending" class="button1">Pending Accounts</a>
-
-            </div><br>
+            </div>
 
             <div class="inner-container">
-                <div class="card"> Viewing account
-                    <div class="card-content">
+                <div class="view-card">
+                    <div class="card-content"> 
                         <div class="card-title">First account</div>
+
+                        <div class="personal-info">Personal information</div>
+                        <p class="balance">
+                            <i class="fa fa-user"></i> 
+                            <span class="fname">First Name:</span>
+                            <span class="fname-value">Joe</span>
+                        </p>
+                        <p class="currency">
+                            <i class="fa-solid fa-users"></i>
+                            <span class="lname">Last Name:</span>
+                            <span class="lname-value">Wehbe</span>
+                        </p>
+                        <p class="date">
+                            <i class="fa-solid fa-envelope"></i> 
+                            <span class="email">Email:</span>
+                            <span class="email-value">joe.wehbe@lau.edu</span>
+                        </p><br>
+
+                        <div class="personal-info">Account information</div>
                         <p class="balance">
                             <i class="fa-solid fa-coins"></i> Balance:
                             <span class="balance-value">30000</span>
@@ -78,7 +96,7 @@
                     </table>
                 </div>
 
-                <div class="other-accounts-container">View your other accounts
+                <div class="other-accounts-container">Other accounts
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">Personal account</div>
