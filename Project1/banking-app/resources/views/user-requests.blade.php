@@ -52,8 +52,8 @@
                                 <span class="currency-value">USD</span>
                             </div>
                             <div class="buttons">
-                                <i class="fa-regular fa-circle-check"></i>
-                                <i class="fa-solid fa-xmark"></i>                            
+                                <i class="fa-regular fa-circle-check" onclick="accept()"></i>
+                                <i class="fa-solid fa-xmark" onclick="reject()"></i>                            
                             </div>
                         </div>
                     </li>
@@ -80,8 +80,8 @@
                                 <span class="currency-value">USD</span>
                             </div>
                             <div class="buttons">
-                                <i class="fa-regular fa-circle-check"></i>
-                                <i class="fa-solid fa-xmark"></i>                            
+                                <i class="fa-regular fa-circle-check" onclick="accept()"></i>
+                                <i class="fa-solid fa-xmark" onclick="reject()"></i>                              
                             </div>
                         </div>
                     </li>
@@ -108,14 +108,14 @@
                                 <span class="currency-value">USD</span>
                             </div>
                             <div class="buttons">
-                                <i class="fa-regular fa-circle-check"></i>
-                                <i class="fa-solid fa-xmark"></i>                            
+                                <i class="fa-regular fa-circle-check" onclick="accept()"></i>
+                                <i class="fa-solid fa-xmark" onclick="reject()"></i>                              
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
-
+        <script src="{{ asset('js/user-requests.js') }}"></script>
     </body>
 </html>

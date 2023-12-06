@@ -31,18 +31,57 @@
             <div class="user-list">
                 <ul class="user-list-items">
                     <a href="/user-accounts">
-                        <li class="user-list-item">John Doe <br>
-                            <span class="email">john.doe@lau.edu</span>
+                        <li class="user-list-item">
+                            <div class="flex-container">
+                                <div class="fname">
+                                    <span class="fname-data">First Name</span><br>
+                                    <span class="fname-value">John</span>
+                                </div>
+                                <div class="lname">
+                                    <span class="lname-data">Last Name</span><br>
+                                    <span class="lname-value">Doe</span>
+                                </div>                                
+                                <div class="email">
+                                    <span class="email-data">Email</span><br>
+                                    <span class="email-value">john.doe@lau.edu</span>
+                                </div>
+                            </div>
                         </li>
                     </a>        
                     <a href="/user-accounts">
-                        <li class="user-list-item">John Doe <br>
-                            <span class="email">john.doe@lau.edu</span>
+                        <li class="user-list-item">
+                            <div class="flex-container">
+                                <div class="fname">
+                                    <span class="fname-data">First Name</span><br>
+                                    <span class="fname-value">John</span>
+                                </div>
+                                <div class="lname">
+                                    <span class="lname-data">Last Name</span><br>
+                                    <span class="lname-value">Doe</span>
+                                </div>                                
+                                <div class="email">
+                                    <span class="email-data">Email</span><br>
+                                    <span class="email-value">john.doe@lau.edu</span>
+                                </div>
+                            </div>
                         </li>
                     </a> 
                     <a href="/user-accounts">
-                        <li class="user-list-item">John Doe <br>
-                            <span class="email">john.doe@lau.edu</span>
+                        <li class="user-list-item">
+                            <div class="flex-container">
+                                <div class="fname">
+                                    <span class="fname-data">First Name</span><br>
+                                    <span class="fname-value">John</span>
+                                </div>
+                                <div class="lname">
+                                    <span class="lname-data">Last Name</span><br>
+                                    <span class="lname-value">Doe</span>
+                                </div>                                
+                                <div class="email">
+                                    <span class="email-data">Email</span><br>
+                                    <span class="email-value">john.doe@lau.edu</span>
+                                </div>
+                            </div>
                         </li>
                     </a> 
                 </ul>
