@@ -245,7 +245,7 @@ th {
 }
 
 
-#deposit-modal-container, #withdraw-modal-container {
+#deposit-modal-container, #withdraw-modal-container, #to-modal-container, #from-modal-container {
   display: none;
   position: fixed;
   top: 0;
@@ -257,7 +257,7 @@ th {
   align-items: center;
 }
 
-.deposit-modal-content, .withdraw-modal-content {
+.deposit-modal-content, .withdraw-modal-content, .to-modal-content, .from-modal-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;

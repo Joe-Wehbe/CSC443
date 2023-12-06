@@ -21,3 +21,19 @@ function closeWithdrawModal() {
     document.getElementById("withdraw-modal-container").style.display = "none";
 }
 
+function openToModal() {
+    document.getElementById("to-modal-container").style.display = "flex";
+}
+
+function closeToModal() {
+    document.getElementById("to-modal-container").style.display = "none";
+}
+
+function openFromModal() {
+    document.getElementById("from-modal-container").style.display = "flex";
+}
+
+function closeFromModal() {
+    document.getElementById("from-modal-container").style.display = "none";
+}
+

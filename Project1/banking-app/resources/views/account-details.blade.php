@@ -41,21 +41,31 @@
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search transaction date...">
 
-                <button class="button" onclick="openModal()">Transfer to</button>
-                <div id="deposit-modal-container">
-                    <div class="deposit-modal-content">
-                        <p>Enter the amount to deposit</p>
-                        <input type="number" name="deposit-amount" placeholder="Amount"></input>
-                        <button onclick="closeDepositModal()">Deposit</button>
+                <button class="button" onclick="openToModal()">Transfer to</button>
+                <div id="to-modal-container">
+                    <div class="to-modal-content">
+                        <p>Choose the account to transfer to</p>
+                        <select name="account">
+                            <option value="acc1">First Account</option>
+                            <option value="acc2">Family Account</option>
+                        </select>
+                        <p>Enter the amount to transfer</p>
+                        <input type="number" name="to-amount" placeholder="Amount"></input>
+                        <button onclick="closeToModal()">Transfer</button>
                     </div>
                 </div>
 
-                <button class="button1" onclick="openModal()">Transfer from</button>
-                <div id="deposit-modal-container">
-                    <div class="deposit-modal-content">
-                        <p>Enter the amount to deposit</p>
-                        <input type="number" name="deposit-amount" placeholder="Amount"></input>
-                        <button onclick="closeDepositModal()">Deposit</button>
+                <button class="button1" onclick="openFromModal()">Transfer from</button>
+                <div id="from-modal-container">
+                    <div class="from-modal-content">
+                        <p>Choose the account to transfer from</p>
+                        <select name="account">
+                            <option value="acc1">First Account</option>
+                            <option value="acc2">Family Account</option>
+                        </select>
+                        <p>Enter the amount to transfer</p>
+                        <input type="number" name="from-amount" placeholder="Amount"></input>
+                        <button onclick="closeFromModal()">Transfer</button>
                     </div>
                 </div>
                 
