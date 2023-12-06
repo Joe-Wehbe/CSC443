@@ -40,3 +40,7 @@ Route::get("/account-details", function () {
 Route::get("/users", function () {
     return view('users');
 });
+
+Route::get("/requests", function () {
+    return view('requests');
+});
