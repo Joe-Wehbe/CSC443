@@ -33,6 +33,7 @@
                         <h4> Take the first step towards secure and convenient banking <h4>
                     </div>
                     <form action="/register" method="POST">
+                        @csrf
                         <div class="input-container">
                             <i class="fa fa-user"></i>
                             <input type="text" name="fname" placeholder="First name">
