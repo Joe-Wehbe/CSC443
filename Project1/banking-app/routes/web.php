@@ -14,46 +14,18 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get("/register", function () {return view('register');});
+
 Route::post('/register', [UserController::class, 'register']);
+Route::post('/login', [UserController::class, 'login']);
+Route::get('/logout', [UserController::class, 'logout']);
 
-Route::get("/login", function () {
-    return view('login');
-});
-
-Route::get("/accounts", function () {
-    return view('accounts');
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::view('/accounts', 'accounts');
-});
-
-
-Route::get("/pending", function () {
-    return view('pending');
-});
-
-Route::get("/create-account", function () {
-    return view('create-account');
-});
-
-Route::get("/account-details", function () {
-    return view('account-details');
-});
-
-Route::get("/users", function () {
-    return view('users');
-});
-
-Route::get("/user-requests", function () {
-    return view('user-requests');
-});
-
-Route::get("/user-accounts", function () {
-    return view('user-accounts');
-});
-
-Route::get("/user-account-details", function () {
-    return view('user-account-details');
-});
+Route::get("/register", function () {return view('register');});
+Route::get("/login", function () {return view('login');});
+Route::get("/accounts", function () {return view('accounts');});
+Route::get("/pending", function () {return view('pending');});
+Route::get("/create-account", function () {return view('create-account');});
+Route::get("/account-details", function () {return view('account-details');});
+Route::get("/users", function () {return view('users');});
+Route::get("/user-requests", function () {return view('user-requests');});
+Route::get("/user-accounts", function () {return view('user-accounts');});
+Route::get("/user-account-details", function () {return view('user-account-details');});

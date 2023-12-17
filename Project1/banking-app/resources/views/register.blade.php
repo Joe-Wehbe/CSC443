@@ -11,7 +11,7 @@
         <nav>
             <div class="nav-container">
                 <a class="title"> Creating an account </a>
-                <a href="/">Signup</a>
+                <a href="/register">Signup</a>
                 <a href="/login">Signin</a>
                 <a href="#">About</a>
             </div>

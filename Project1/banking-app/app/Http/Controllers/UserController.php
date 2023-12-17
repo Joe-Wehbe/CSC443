@@ -23,4 +23,9 @@ class UserController extends Controller
         auth()->login(User::create($data));
         return redirect('/login');
     }
+
+    public function logout(){
+        auth()->logout();
+        return redirect('/login');
+    }
 }
