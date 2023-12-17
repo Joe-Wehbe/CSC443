@@ -24,6 +24,19 @@ class UserController extends Controller
         return redirect('/login');
     }
 
+    public function login(Request $request){
+        $data = $request -> validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if(auth()->attempt(['email' => $data['email'], 'password' => $data['password']])){
+            $request->session()->regenerate();
+        }
+
+        return redirect('/login');
+    }
+
     public function logout(){
         auth()->logout();
         return redirect('/login');

@@ -15,7 +15,7 @@
         <nav>
             <div class="nav-container">
                 <a class="title"> Logging in </a>
-                <a href="/">Signup</a>
+                <a href="/register">Signup</a>
                 <a href="/login">Signin</a>
                 <a href="#">About</a>
             </div>
@@ -36,7 +36,8 @@
                         <h2> Log into your account </h2>
                         <h4> Manage your bank accounts, check your balance, transfer money, and much more! <h4>
                     </div>
-                    <form action="/register" method="POST">
+                    <form action="/accounts" method="POST">
+                        @csrf
                         <div class="input-container">
                             <i class="fa-solid fa-envelope"></i>
                             <input type="email" name="email" placeholder="Email">
@@ -46,7 +47,7 @@
                             <input type="password" name="password" placeholder="Password">
                         </div>
                         <input type="submit" name="submit" value="Login">
-                        <a href="/">Don't have an account? Register </a>
+                        <a href="/register">Don't have an account? Register </a>
                     </form>
                 </div>
             </div>

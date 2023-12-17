@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 
 
 Route::post('/register', [UserController::class, 'register']);
-Route::post('/login', [UserController::class, 'login']);
+Route::post('/accounts', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 Route::get("/register", function () {return view('register');});
