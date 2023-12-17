@@ -18,12 +18,17 @@ Route::get("/register", function () {return view('register');});
 Route::post('/register', [UserController::class, 'register']);
 
 Route::get("/login", function () {
-return view('login');
+    return view('login');
 });
 
 Route::get("/accounts", function () {
     return view('accounts');
 });
+
+Route::middleware(['auth'])->group(function () {
+    Route::view('/accounts', 'accounts');
+});
+
 
 Route::get("/pending", function () {
     return view('pending');

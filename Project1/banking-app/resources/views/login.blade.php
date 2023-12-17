@@ -8,6 +8,10 @@
     </head>
 
     <body style="background-image: url('{{ asset('images/background1.jpg') }}');">
+
+        @auth
+            <script>window.location = "{{ url('/accounts') }}";</script>
+        @else
         <nav>
             <div class="nav-container">
                 <a class="title"> Logging in </a>
@@ -47,6 +51,6 @@
                 </div>
             </div>
         </div>
-        
+        @endauth
     </body>
 </html>

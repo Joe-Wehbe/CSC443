@@ -12,7 +12,7 @@ class UserController extends Controller
         $data = $request -> validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
             'cpassword' => 'required|same:password'
         ]);
@@ -20,7 +20,7 @@ class UserController extends Controller
         $data['is_admin'] = false;
         $data['password'] = bcrypt( $data['password']);
 
-        User::create($data);
-        return view('accounts');
+        auth()->login(User::create($data));
+        return redirect('/login');
     }
 }
