@@ -36,11 +36,11 @@
                         @csrf
                         <div class="input-container">
                             <i class="fa fa-user"></i>
-                            <input type="text" name="fname" placeholder="First name">
+                            <input type="text" name="first_name" placeholder="First name">
                         </div>
                         <div class="input-container">
                             <i class="fa-solid fa-users"></i>                    
-                        <input type="text" name="lname" placeholder="Family name">
+                        <input type="text" name="last_name" placeholder="Family name">
                         </div>
                         <div class="input-container">
                             <i class="fa-solid fa-envelope"></i>

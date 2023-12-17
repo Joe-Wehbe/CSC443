@@ -14,11 +14,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/register', [UserController::class, 'displayRegisterPage']);
+Route::get("/register", function () {return view('register');});
 Route::post('/register', [UserController::class, 'register']);
 
 Route::get("/login", function () {
-    return view('login');
+return view('login');
 });
 
 Route::get("/accounts", function () {
