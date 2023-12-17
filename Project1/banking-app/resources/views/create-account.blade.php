@@ -13,7 +13,7 @@
                 <a class="title"> Creating a bank account </a>
                 <a href="/accounts">Home</a>
                 <a href="#">About</a>
-                <a href="#">Logout</a>
+                <a href="/login">Logout</a>
             </div>
         </nav>
         <div class="statement1">
@@ -22,7 +22,7 @@
         </div>
         <div class="container">
             <div class="card">
-                <div class="left-side-container">
+                <!-- <div class="left-side-container">
                     <div class="statement2">
                         <h2> Verify your identity </h2>
                         <h4> This is a necessary step for improved account security <h4>
@@ -42,17 +42,18 @@
                         </div>
                         <input type="submit" name="submit" value="Verify">
                     </form>
-                </div>
+                </div> -->
 
                 <div class="right-side-container">
                     <div class="statement2">
                         <h2> Enter account information </h2>
                         <h4> Fill in the fields below to create your account<h4>
                     </div>
-                    <form action="/register" method="POST">
+                    <form action="/pending" method="POST">
+                        @csrf
                         <div class="input-container">
                             <i class="fa-solid fa-file-invoice"></i>
-                            <input type="text" name="account-name" placeholder="Account name">
+                            <input type="text" name="name" placeholder="Account name">
                         </div>
                         <div class="input-container">
                             <i class="fa-solid fa-coins"></i>                    
@@ -66,7 +67,7 @@
                                 <option value="eur">EUR</option>
                             </select>
                         </div>
-                        <input type="submit" name="submit" value="Create">
+                        <input type="submit" name="submit" value="Create account">
                     </form>
                 </div>
             </div>
