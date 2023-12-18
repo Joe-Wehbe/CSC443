@@ -10,7 +10,11 @@
     <body style="background-image: url('{{ asset('images/background1.jpg') }}');">
 
         @auth
-            <script>window.location = "{{ url('/accounts') }}";</script>
+            @if(auth()->user()->is_admin)
+                <script>window.location = "{{ url('/users') }}";</script>
+            @else
+                <script>window.location = "{{ url('/accounts') }}";</script>
+            @endif
         @else
         <nav>
             <div class="nav-container">

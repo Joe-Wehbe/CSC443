@@ -54,7 +54,7 @@
                                 </p>
                                 <p class="date">
                                     <i class="fa-solid fa-calendar-days"></i> Creation date:
-                                    <span class="date-value">N/A</span>
+                                    <span class="date-value">{{$account['created_at']}}</span>
                                 </p>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                                 </p>
                                 <p class="date">
                                     <i class="fa-solid fa-calendar-days"></i> Creation date:
-                                    <span class="date-value">N/A</span>
+                                    <span class="date-value">{{$account['created_at']}}</span>
                                 </p>
                             </div>
                         </div>
