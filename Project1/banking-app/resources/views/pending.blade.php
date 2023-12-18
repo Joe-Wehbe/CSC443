@@ -33,63 +33,53 @@
             </div>
 
             <div class="cards-container">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">First account
-                            <span class="status-pending">Pending</span>
+                @foreach($accounts as $account)
+                    @if($account['status'] == 'pending')
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-title">{{$account['name']}}
+                                    <span class="status-pending">Pending</span>
+                                </div>
+                                <p class="balance">
+                                    <i class="fa-solid fa-coins"></i> Initial Balance:
+                                    <span class="balance-value">{{$account['balance']}}</span>
+                                </p>
+                                <p class="currency">
+                                    <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                    <span class="currency-value">{{$account['currency']}}</span>
+                                </p>
+                                <p class="date">
+                                    <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                    <span class="date-value">N/A</span>
+                                </p>
+                            </div>
                         </div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Initial Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">N/A</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Personal account
-                            <span class="status-accepted">Accepted</span>
+                    @endif
+                @endforeach
+
+                @foreach($accounts as $account)
+                    @if($account['status'] == 'rejected')
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-title">{{$account['name']}}
+                                    <span class="status-rejected">Rejected</span>
+                                </div>
+                                <p class="balance">
+                                    <i class="fa-solid fa-coins"></i> Initial Balance:
+                                    <span class="balance-value">{{$account['balance']}}</span>
+                                </p>
+                                <p class="currency">
+                                    <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                    <span class="currency-value">{{$account['currency']}}</span>
+                                </p>
+                                <p class="date">
+                                    <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                    <span class="date-value">N/A</span>
+                                </p>
+                            </div>
                         </div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Initial Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">N/A</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">First account
-                            <span class="status-rejected">Rejected</span>
-                        </div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Initial Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">N/A</span>
-                        </p>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         

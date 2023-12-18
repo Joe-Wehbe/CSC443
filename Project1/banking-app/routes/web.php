@@ -28,16 +28,20 @@ Route::post('/create-account', [AccountController::class, 'createAccount']);
 Route::get("/register", function () {return view('register');});
 Route::get("/login", function () {return view('login');});
 
-
 Route::get("/accounts", function () {
     if(auth()->check()){
         $accounts = auth()->user()->userAccounts()->latest()->get();
-        return view('accounts', ['accounts' => $accounts]);
     }
+    return view('accounts', ['accounts' => $accounts]);
 });
 
+Route::get("/pending", function () {
+    if(auth()->check()){
+        $accounts = auth()->user()->userAccounts()->latest()->get();
+    }
+    return view('pending', ['accounts' => $accounts]);
+});
 
-Route::get("/pending", function () {return view('pending');});
 Route::get("/create-account", function () {return view('create-account');});
 Route::get("/account-details", function () {return view('account-details');});
 Route::get("/users", function () {return view('users');});

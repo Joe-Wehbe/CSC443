@@ -33,23 +33,25 @@
 
             <div class="cards-container">
                 @foreach($accounts as $account)
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">{{$account['name']}}</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">{{$account['balance']}}</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">{{$account['currency']}}</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">{{$account['created_at']}}</span>
-                        </p>
-                    </div>
-                </div>
+                    @if($account['status'] == 'accepted')
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-title">{{$account['name']}}</div>
+                                <p class="balance">
+                                    <i class="fa-solid fa-coins"></i> Balance:
+                                    <span class="balance-value">{{$account['balance']}}</span>
+                                </p>
+                                <p class="currency">
+                                    <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                    <span class="currency-value">{{$account['currency']}}</span>
+                                </p>
+                                <p class="date">
+                                    <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                    <span class="date-value">{{$account['created_at']}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
             </div>
         </div>
