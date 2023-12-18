@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->enum('status', ['accepted', 'rejected', 'pending'])->default('pending');
             $table->boolean('is_enabled')->default(true);            
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained();
         });
     }
 

@@ -13,7 +13,7 @@
                 <a class="title"> Creating a bank account </a>
                 <a href="/accounts">Home</a>
                 <a href="#">About</a>
-                <a href="/login">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav>
         <div class="statement1">
@@ -49,7 +49,7 @@
                         <h2> Enter account information </h2>
                         <h4> Fill in the fields below to create your account<h4>
                     </div>
-                    <form action="/pending" method="POST">
+                    <form action="/create-account" method="POST">
                         @csrf
                         <div class="input-container">
                             <i class="fa-solid fa-file-invoice"></i>

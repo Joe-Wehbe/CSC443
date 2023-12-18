@@ -21,7 +21,7 @@ Route::post('/accounts', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 // Account Controller
-Route::post('/pending', [AccountController::class, 'createAccount']);
+Route::post('/create-account', [AccountController::class, 'createAccount']);
 
 // Navigation Routes
 Route::get("/register", function () {return view('register');});

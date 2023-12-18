@@ -14,4 +14,8 @@ class Account extends Model
         'balance',
         'currency',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
