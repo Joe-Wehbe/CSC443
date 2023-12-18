@@ -27,79 +27,30 @@
             </div><br>
 
             <div class="statement">
-                <p>4 Bank Accounts <p>
+                <p>{{$accounts->count()}} Bank Accounts <p>
                 <p class="statement1">Click on an account for transaction details.</p>
             </div>
 
             <div class="cards-container">
+                @foreach($accounts as $account)
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-title">First account</div>
+                        <div class="card-title">{{$account['name']}}</div>
                         <p class="balance">
                             <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
+                            <span class="balance-value">{{$account['balance']}}</span>
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
+                            <span class="currency-value">{{$account['currency']}}</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
+                            <span class="date-value">{{$account['created_at']}}</span>
                         </p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Personal account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">EUR</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Family account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">LBP</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Work account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <script src="{{ asset('js/accounts.js') }}"></script>

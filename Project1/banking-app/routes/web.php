@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AccountController;
+use App\Models\Account;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,16 @@ Route::post('/create-account', [AccountController::class, 'createAccount']);
 // Navigation Routes
 Route::get("/register", function () {return view('register');});
 Route::get("/login", function () {return view('login');});
-Route::get("/accounts", function () {return view('accounts');});
+
+
+Route::get("/accounts", function () {
+    if(auth()->check()){
+        $accounts = auth()->user()->userAccounts()->latest()->get();
+        return view('accounts', ['accounts' => $accounts]);
+    }
+});
+
+
 Route::get("/pending", function () {return view('pending');});
 Route::get("/create-account", function () {return view('create-account');});
 Route::get("/account-details", function () {return view('account-details');});
