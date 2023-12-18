@@ -29,21 +29,22 @@ Route::get("/register", function () {return view('register');});
 Route::get("/login", function () {return view('login');});
 
 Route::get("/accounts", function () {
-    if(auth()->check()){
-        $accounts = auth()->user()->userAccounts()->latest()->get();
-    }
+    if(auth()->check()){$accounts = auth()->user()->userAccounts()->latest()->get();}
     return view('accounts', ['accounts' => $accounts]);
 });
 
 Route::get("/pending", function () {
-    if(auth()->check()){
-        $accounts = auth()->user()->userAccounts()->latest()->get();
-    }
+    if(auth()->check()){$accounts = auth()->user()->userAccounts()->latest()->get();}
     return view('pending', ['accounts' => $accounts]);
 });
 
 Route::get("/create-account", function () {return view('create-account');});
-Route::get("/account-details", function () {return view('account-details');});
+
+Route::get("/account-details", function () {
+    if(auth()->check()){$accounts = auth()->user()->userAccounts()->latest()->get();}
+    return view('account-details', ['accounts' => $accounts]);
+});
+
 Route::get("/users", function () {return view('users');});
 Route::get("/user-requests", function () {return view('user-requests');});
 Route::get("/user-accounts", function () {return view('user-accounts');});

@@ -28,8 +28,12 @@
             </div><br>
 
             <div class="statement">
-                <p>3 Bank Accounts <p>
-                <p class="statement1">Please be patient, an agent is reviewing your account creation request.</p>
+                <p>{{$accounts->where('status','pending')->count()}} Bank Accounts <p>
+                @if($accounts->where('status', 'pending')->count() > 0)
+                    <p class="statement1">Please be patient, an agent is reviewing your account creation request.</p>
+                @else
+                    <p class="statement1">Your pending accounts will appear here once creation request is sent</p>
+                @endif
             </div>
 
             <div class="cards-container">
