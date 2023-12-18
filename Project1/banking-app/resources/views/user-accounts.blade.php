@@ -12,7 +12,7 @@
                 <a class="title"> Joe's Accounts </a>
                 <a href="/accounts">Home</a>
                 <a href="">About</a>
-                <a href="#">Logout</a>
+                <a href="/logout">Logout</a>
             </div>
         </nav>
 
