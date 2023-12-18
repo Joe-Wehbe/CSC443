@@ -30,62 +30,30 @@
 
             <div class="user-list">
                 <ul class="user-list-items">
-                    <a href="/user-accounts">
-                        <li class="user-list-item">
-                            <div class="flex-container">
-                                <div class="fname">
-                                    <span class="fname-data">First Name</span><br>
-                                    <span class="fname-value">John</span>
-                                </div>
-                                <div class="lname">
-                                    <span class="lname-data">Last Name</span><br>
-                                    <span class="lname-value">Doe</span>
-                                </div>                                
-                                <div class="email">
-                                    <span class="email-data">Email</span><br>
-                                    <span class="email-value">john.doe@lau.edu</span>
-                                </div>
-                            </div>
-                        </li>
-                    </a>        
-                    <a href="/user-accounts">
-                        <li class="user-list-item">
-                            <div class="flex-container">
-                                <div class="fname">
-                                    <span class="fname-data">First Name</span><br>
-                                    <span class="fname-value">John</span>
-                                </div>
-                                <div class="lname">
-                                    <span class="lname-data">Last Name</span><br>
-                                    <span class="lname-value">Doe</span>
-                                </div>                                
-                                <div class="email">
-                                    <span class="email-data">Email</span><br>
-                                    <span class="email-value">john.doe@lau.edu</span>
-                                </div>
-                            </div>
-                        </li>
-                    </a> 
-                    <a href="/user-accounts">
-                        <li class="user-list-item">
-                            <div class="flex-container">
-                                <div class="fname">
-                                    <span class="fname-data">First Name</span><br>
-                                    <span class="fname-value">John</span>
-                                </div>
-                                <div class="lname">
-                                    <span class="lname-data">Last Name</span><br>
-                                    <span class="lname-value">Doe</span>
-                                </div>                                
-                                <div class="email">
-                                    <span class="email-data">Email</span><br>
-                                    <span class="email-value">john.doe@lau.edu</span>
-                                </div>
-                            </div>
-                        </li>
-                    </a> 
+                    @foreach($users as $user)
+                        @if(!$user->is_admin)
+                            <a href="/user-accounts">
+                                <li class="user-list-item">
+                                    <div class="flex-container">
+                                        <div class="fname">
+                                            <span class="fname-data">First Name</span><br>
+                                            <span class="fname-value">{{$user['first_name']}}</span>
+                                        </div>
+                                        <div class="lname">
+                                            <span class="lname-data">Last Name</span><br>
+                                            <span class="lname-value">{{$user['last_name']}}</span>
+                                        </div>                                
+                                        <div class="email">
+                                            <span class="email-data">Email</span><br>
+                                            <span class="email-value">{{$user['email']}}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </a>
+                        @endif
+                    @endforeach        
                 </ul>
-            </div>
+            </div><br>
         </div>
     </body>
 </html>

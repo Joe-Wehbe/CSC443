@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Models\Account;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -39,13 +40,13 @@ Route::get("/pending", function () {
 });
 
 Route::get("/create-account", function () {return view('create-account');});
+Route::get("/account-details", function () {return view('account-details');});
 
-Route::get("/account-details", function () {
-    if(auth()->check()){$accounts = auth()->user()->userAccounts()->latest()->get();}
-    return view('account-details', ['accounts' => $accounts]);
+Route::get("/users", function () {
+    if(auth()->check()){$users = User::all();}
+    return view('users', ['users' => $users]);
 });
 
-Route::get("/users", function () {return view('users');});
 Route::get("/user-requests", function () {return view('user-requests');});
 Route::get("/user-accounts", function () {return view('user-accounts');});
 Route::get("/user-account-details", function () {return view('user-account-details');});
