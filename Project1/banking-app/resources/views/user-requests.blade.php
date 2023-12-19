@@ -23,96 +23,51 @@
             </div><br>
 
             <div class="statement">
-                <p>3 Pending Requests<p>
-                <p class="statement1">Users will be notified of your approval or rejection.</p>
+                <p>{{$accounts->where('status','pending')->count()}} Pending Requests<p>
+                @if($accounts->where('status', 'pending')->count() > 0)
+                    <p class="statement1">Users will be notified of your approval or rejection.</p>
+                @else
+                    <p class="statement1">No pending requests!</p>
+                @endif
+
             </div>
 
             <div class="user-list">
                 <ul class="user-list-items">
-                    <li class="user-list-item">
-                        <div class="flex-container">
-                            <div class="username">
-                                <span class="username-data">Full Name</span><br>
-                                <span class="username-value">John Doe</span>
-                            </div>
-                            <div class="email">
-                                <span class="email-data">Email</span><br>
-                                <span class="email-value">john.doe@lau.edu</span>
-                            </div>                                
-                            <div class="account">
-                                <span class="account-data">Account Name</span><br>
-                                <span class="account-value">Student account</span>
-                            </div>
-                            <div class="balance">
-                                <span class="balance-data">Balance</span><br>
-                                <span class="balance-value">30000</span>
-                            </div>
-                            <div class="currency">
-                                <span class="currency-data">Currency</span><br>
-                                <span class="currency-value">USD</span>
-                            </div>
-                            <div class="buttons">
-                                <i class="fa-regular fa-circle-check" onclick="accept()"></i>
-                                <i class="fa-solid fa-xmark" onclick="reject()"></i>                            
-                            </div>
-                        </div>
-                    </li>
-                    <li class="user-list-item">
-                        <div class="flex-container">
-                            <div class="username">
-                                <span class="username-data">Full Name</span><br>
-                                <span class="username-value">John Doe</span>
-                            </div>
-                            <div class="email">
-                                <span class="email-data">Email</span><br>
-                                <span class="email-value">john.doe@lau.edu</span>
-                            </div>                                
-                            <div class="account">
-                                <span class="account-data">Account Name</span><br>
-                                <span class="account-value">Student account</span>
-                            </div>
-                            <div class="balance">
-                                <span class="balance-data">Balance</span><br>
-                                <span class="balance-value">30000</span>
-                            </div>
-                            <div class="currency">
-                                <span class="currency-data">Currency</span><br>
-                                <span class="currency-value">USD</span>
-                            </div>
-                            <div class="buttons">
-                                <i class="fa-regular fa-circle-check" onclick="accept()"></i>
-                                <i class="fa-solid fa-xmark" onclick="reject()"></i>                              
-                            </div>
-                        </div>
-                    </li>
-                    <li class="user-list-item">
-                        <div class="flex-container">
-                            <div class="username">
-                                <span class="username-data">Full Name</span><br>
-                                <span class="username-value">John Doe</span>
-                            </div>
-                            <div class="email">
-                                <span class="email-data">Email</span><br>
-                                <span class="email-value">john.doe@lau.edu</span>
-                            </div>                                
-                            <div class="account">
-                                <span class="account-data">Account Name</span><br>
-                                <span class="account-value">Student account</span>
-                            </div>
-                            <div class="balance">
-                                <span class="balance-data">Balance</span><br>
-                                <span class="balance-value">30000</span>
-                            </div>
-                            <div class="currency">
-                                <span class="currency-data">Currency</span><br>
-                                <span class="currency-value">USD</span>
-                            </div>
-                            <div class="buttons">
-                                <i class="fa-regular fa-circle-check" onclick="accept()"></i>
-                                <i class="fa-solid fa-xmark" onclick="reject()"></i>                              
-                            </div>
-                        </div>
-                    </li>
+                    @foreach($users as $user)
+                        @foreach($user->userAccounts as $account)
+                            @if($account['status'] == 'pending')
+                                <li class="user-list-item">
+                                    <div class="flex-container">
+                                        <div class="username">
+                                            <span class="username-data">Full Name</span><br>
+                                            <span class="username-value">{{$user['first_name']}} {{$user['last_name']}}</span>
+                                        </div>
+                                        <div class="email">
+                                            <span class="email-data">Email</span><br>
+                                            <span class="email-value">{{$user['email']}}</span>
+                                        </div>                                
+                                        <div class="account">
+                                            <span class="account-data">Account Name</span><br>
+                                            <span class="account-value">{{$account['name']}}</span>
+                                        </div>
+                                        <div class="balance">
+                                            <span class="balance-data">Balance</span><br>
+                                            <span class="balance-value">{{$account['balance']}}</span>
+                                        </div>
+                                        <div class="currency">
+                                            <span class="currency-data">Currency</span><br>
+                                            <span class="currency-value">{{$account['currency']}}</span>
+                                        </div>
+                                        <div class="buttons">
+                                            <i class="fa-regular fa-circle-check" onclick="accept()"></i>
+                                            <i class="fa-solid fa-xmark" onclick="reject()"></i>                            
+                                        </div>
+                                    </div>
+                                </li>
+                            @endif
+                        @endforeach
+                    @endforeach
                 </ul>
             </div>
         </div>

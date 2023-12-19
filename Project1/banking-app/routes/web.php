@@ -47,6 +47,10 @@ Route::get("/users", function () {
     return view('users', ['users' => $users]);
 });
 
-Route::get("/user-requests", function () {return view('user-requests');});
+Route::get("/user-requests", function () {
+    if(auth()->check()){$accounts = Account::all(); $users = User::All();}
+    return view('user-requests', ['accounts' => $accounts, 'users' => $users]);
+});
+
 Route::get("/user-accounts", function () {return view('user-accounts');});
 Route::get("/user-account-details", function () {return view('user-account-details');});

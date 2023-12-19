@@ -24,8 +24,12 @@
             </div><br>
 
             <div class="statement">
-                <p>3 Users<p>
-                <p class="statement1">Click on a user to view their accounts.</p>
+                <p>{{$users->where('is_admin','0')->count()}} Users<p>
+                @if($users->where('is_admin','0')->count() > 0)
+                    <p class="statement1">Click on a user to view their accounts.</p>
+                @else
+                    <p class="statement1">No users yet!</p>
+                @endif
             </div>
 
             <div class="user-list">
