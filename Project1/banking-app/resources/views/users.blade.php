@@ -36,7 +36,7 @@
                 <ul class="user-list-items">
                     @foreach($users as $user)
                         @if(!$user->is_admin)
-                            <a href="/user-accounts">
+                            <a href="/user-accounts/{{$user->id}}">
                                 <li class="user-list-item">
                                     <div class="flex-container">
                                         <div class="fname">

@@ -9,7 +9,7 @@
     <body>
         <nav>
             <div class="nav-container">
-                <a class="title"> Joe's Accounts </a>
+                <a class="title"> {{$user->first_name}} {{$user->last_name}}'s Accounts </a>
                 <a href="/accounts">Home</a>
                 <a href="">About</a>
                 <a href="/logout">Logout</a>
@@ -28,74 +28,27 @@
             </div>
 
             <div class="cards-container">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">First account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Personal account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">EUR</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Family account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">LBP</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-title">Work account</div>
-                        <p class="balance">
-                            <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
-                        </p>
-                        <p class="currency">
-                            <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
-                        </p>
-                        <p class="date">
-                            <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
-                        </p>
-                    </div>
-                </div>
+                @foreach($accounts as $account)
+                    @if($account['status'] == 'accepted')
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-title">{{$account['name']}}</div>
+                                <p class="balance">
+                                    <i class="fa-solid fa-coins"></i> Balance:
+                                    <span class="balance-value">{{$account['balance']}}</span>
+                                </p>
+                                <p class="currency">
+                                    <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                    <span class="currency-value">{{$account['currency']}}</span>
+                                </p>
+                                <p class="date">
+                                    <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                    <span class="date-value">{{$account['created_at']}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <script src="{{ asset('js/user-accounts.js') }}"></script>

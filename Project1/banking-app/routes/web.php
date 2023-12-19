@@ -52,5 +52,7 @@ Route::get("/user-requests", function () {
     return view('user-requests', ['accounts' => $accounts, 'users' => $users]);
 });
 
-Route::get("/user-accounts", function () {return view('user-accounts');});
+Route::get("/user-accounts/{userId}", [UserController::class, 'getUserAccounts']);
+
+
 Route::get("/user-account-details", function () {return view('user-account-details');});

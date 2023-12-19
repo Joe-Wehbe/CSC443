@@ -41,4 +41,12 @@ class UserController extends Controller
         auth()->logout();
         return redirect('/login');
     }
+
+    public function getUserAccounts($userId) {
+        $user = User::findOrFail($userId);
+        $accounts = $user->userAccounts()->get();
+
+        return view('user-accounts', ['user' => $user, 'accounts' => $accounts]);
+    }
+
 }

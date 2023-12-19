@@ -28,7 +28,7 @@
             </div><br>
 
             <div class="statement">
-                <p>{{$accounts->where('status','pending')->count()}} Bank Accounts <p>
+                <p>{{$accounts->where('status','pending')->count()}} Pending bank accounts <p>
                 @if($accounts->where('status', 'pending')->count() > 0)
                     <p class="statement1">Please be patient, an agent is reviewing your account creation request.</p>
                 @else
