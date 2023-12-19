@@ -22,9 +22,14 @@
                 <button class="button2" onclick="openDepositModal()">Deposit</button>
                 <div id="deposit-modal-container">
                     <div class="deposit-modal-content">
-                        <p>Enter the amount to deposit</p>
-                        <input type="number" name="deposit-amount" placeholder="Amount"></input>
-                        <button onclick="closeDepositModal()">Deposit</button>
+                        <form id="deposit-form" action="/deposit" method="POST">
+                            @csrf
+                            <p>Enter the amount to deposit</p>
+                            <input type="number" name="deposit_amount" placeholder="Amount" required>
+                            <input type="hidden" name="accountId" value="{{$account['id']}}">
+                            <button type="submit">Deposit</button>
+                            <button type="button" onclick="closeDepositModal()">Cancel</button>
+                        </form>
                     </div>
                 </div>
 
@@ -34,7 +39,8 @@
                     <div class="withdraw-modal-content">
                         <p>Enter the amount to withdraw</p>
                         <input type="number" name="withdraw-amount" placeholder="Amount"></input>
-                        <button onclick="closeWithdrawModal()">Withdraw</button>
+                        <button onclick="">Withdraw</button>
+                        <button onclick="closeWithdrawModal()">Cancel</button>
                     </div>
                 </div>
 
@@ -51,7 +57,8 @@
                         </select>
                         <p>Enter the amount to transfer</p>
                         <input type="number" name="to-amount" placeholder="Amount"></input>
-                        <button onclick="closeToModal()">Transfer</button>
+                        <button onclick="">Transfer</button>
+                        <button onclick="closeToModal()">Cancel</button>
                     </div>
                 </div>
 
@@ -65,7 +72,8 @@
                         </select>
                         <p>Enter the amount to transfer</p>
                         <input type="number" name="from-amount" placeholder="Amount"></input>
-                        <button onclick="closeFromModal()">Transfer</button>
+                        <button onclick="">Cancel</button>
+                        <button onclick="closeFromModal()">Cancel</button>
                     </div>
                 </div>
                 
@@ -73,7 +81,7 @@
 
             <div class="inner-container">
                 <div class="view-card">
-                    <span class="viewing">Viewing Account</span>
+                    <span class="viewing">Viewing account</span>
                     <div class="card-content"> 
                         <div class="card-title">{{$account['name']}}
                             <i class="fa-solid fa-trash" onclick="confirmDelete()"></i>
@@ -112,6 +120,7 @@
                     </div>
                 </div>
 
+
                 <div class="transactions-container"> Transactions history
                     <table>
                         <thead>
@@ -129,40 +138,32 @@
                             <td>Row 1, Cell 3</td>
                             <td>Row 1, Cell 4</td>
                         </tr>
-                        <tr>
-                            <td>Row 2, Cell 1</td>
-                            <td>Row 2, Cell 2</td>
-                            <td>Row 2, Cell 3</td>
-                            <td>Row 1, Cell 4</td>
-                        </tr>
-                        <tr>
-                            <td>Row 3, Cell 1</td>
-                            <td>Row 3, Cell 2</td>
-                            <td>Row 3, Cell 3</td>
-                            <td>Row 1, Cell 4</td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="other-accounts-container">Other accounts
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-title">Personal account</div>
-                            <p class="balance">
-                                <i class="fa-solid fa-coins"></i> Balance:
-                                <span class="balance-value">30000</span>
-                            </p>
-                            <p class="currency">
-                                <i class="fa-solid fa-dollar-sign"></i> Currency:
-                                <span class="currency-value">EUR</span>
-                            </p>
-                            <p class="date">
-                                <i class="fa-solid fa-calendar-days"></i> Creation date:
-                                <span class="date-value">30-8-2021</span>
-                            </p>
-                        </div>
-                    </div>
+                    @foreach($accounts as $otherAccount)
+                        @if($otherAccount['id'] != $account['id'])
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-title">{{ $otherAccount['name']}}</div>
+                                    <p class="balance">
+                                        <i class="fa-solid fa-coins"></i> Balance:
+                                        <span class="balance-value">{{$otherAccount['balance']}}</span>
+                                    </p>
+                                    <p class="currency">
+                                        <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                        <span class="currency-value">{{$otherAccount['currency']}}</span>
+                                    </p>
+                                    <p class="date">
+                                        <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                        <span class="date-value">{{ $otherAccount['created_at']->format('Y-m-d') }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

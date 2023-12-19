@@ -5,6 +5,7 @@ use App\Models\Account;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::get("/user-accounts/{userId}", [UserController::class, 'getUserAccounts']
 Route::post('/create-account', [AccountController::class, 'createAccount']);
 Route::post('/update-account-status', [AccountController::class, 'updateAccountStatus']);
 Route::get("/account-details/{accountId}", [AccountController::class, 'getAccountDetails']);
+
+// Transaction Controller
+Route::post('/deposit', [TransactionController::class, 'deposit']);
+
 
 // Navigation Routes
 Route::get("/register", function () {return view('register');});

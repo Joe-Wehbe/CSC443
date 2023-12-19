@@ -13,4 +13,8 @@ class Transaction extends Model
         'deposit',
         'withdrawal',
     ];
+
+    public function account() {
+        return $this->belongsTo(Account::class);
+    }
 }
