@@ -22,4 +22,16 @@ class AccountController extends Controller
 
         return redirect('/pending');
     }
+
+    public function updateAccountStatus(Request $request)
+    {
+        $accountId = $request->input('accountId');
+        $status = $request->input('status');
+
+        $account = Account::findOrFail($accountId);
+        $account->status = $status;
+        $account->save();
+
+        return response()->json(['message' => 'Account status updated successfully']);
+    }
 }

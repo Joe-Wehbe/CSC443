@@ -23,8 +23,12 @@
             </div><br>
 
             <div class="statement">
-                <p>4 Bank Accounts <p>
-                <p class="statement1">Click on an account for transaction details.</p>
+                <p>{{$accounts->where('status', 'accepted')->count()}} Bank Accounts <p>
+                @if($accounts->where('status', 'accepted')->count() > 0)
+                    <p class="statement1">Click on an account for transaction details.</p>
+                @else
+                    <p class="statement1">{{$user->first_name}} {{$user->last_name}} does not have any account yet. Make sure to check the pending requests.</p>
+                @endif
             </div>
 
             <div class="cards-container">

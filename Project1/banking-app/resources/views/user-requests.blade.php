@@ -2,8 +2,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/user-requests.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="{{ asset('js/user-requests.js') }}"></script>
         <title>Pending Requests</title>
     </head>
     <body>
@@ -60,8 +63,8 @@
                                             <span class="currency-value">{{$account['currency']}}</span>
                                         </div>
                                         <div class="buttons">
-                                            <i class="fa-regular fa-circle-check" onclick="accept()"></i>
-                                            <i class="fa-solid fa-xmark" onclick="reject()"></i>                            
+                                            <i class="fa-regular fa-circle-check" onclick="accept({{$account->id}})"></i>
+                                            <i class="fa-solid fa-xmark" onclick="reject({{$account->id}})"></i>                            
                                         </div>
                                     </div>
                                 </li>
@@ -71,6 +74,5 @@
                 </ul>
             </div>
         </div>
-        <script src="{{ asset('js/user-requests.js') }}"></script>
     </body>
 </html>

@@ -24,10 +24,12 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 // Account Controller
 Route::post('/create-account', [AccountController::class, 'createAccount']);
+Route::post('/update-account-status', [AccountController::class, 'updateAccountStatus']);
 
 // Navigation Routes
 Route::get("/register", function () {return view('register');});
 Route::get("/login", function () {return view('login');});
+Route::get("/create-account", function () {return view('create-account');});
 
 Route::get("/accounts", function () {
     if(auth()->check()){$accounts = auth()->user()->userAccounts()->latest()->get();}
@@ -39,7 +41,6 @@ Route::get("/pending", function () {
     return view('pending', ['accounts' => $accounts]);
 });
 
-Route::get("/create-account", function () {return view('create-account');});
 Route::get("/account-details", function () {return view('account-details');});
 
 Route::get("/users", function () {
@@ -53,6 +54,7 @@ Route::get("/user-requests", function () {
 });
 
 Route::get("/user-accounts/{userId}", [UserController::class, 'getUserAccounts']);
-
-
 Route::get("/user-account-details", function () {return view('user-account-details');});
+
+
+
