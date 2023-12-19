@@ -21,10 +21,13 @@ use App\Http\Controllers\AccountController;
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/accounts', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
+Route::get("/user-accounts/{userId}", [UserController::class, 'getUserAccounts']);
+
 
 // Account Controller
 Route::post('/create-account', [AccountController::class, 'createAccount']);
 Route::post('/update-account-status', [AccountController::class, 'updateAccountStatus']);
+Route::get("/account-details/{accountId}", [AccountController::class, 'getAccountDetails']);
 
 // Navigation Routes
 Route::get("/register", function () {return view('register');});
@@ -41,8 +44,6 @@ Route::get("/pending", function () {
     return view('pending', ['accounts' => $accounts]);
 });
 
-Route::get("/account-details", function () {return view('account-details');});
-
 Route::get("/users", function () {
     if(auth()->check()){$users = User::all();}
     return view('users', ['users' => $users]);
@@ -53,7 +54,6 @@ Route::get("/user-requests", function () {
     return view('user-requests', ['accounts' => $accounts, 'users' => $users]);
 });
 
-Route::get("/user-accounts/{userId}", [UserController::class, 'getUserAccounts']);
 Route::get("/user-account-details", function () {return view('user-account-details');});
 
 

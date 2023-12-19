@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Account;
 use Illuminate\Http\Request;
 
@@ -31,5 +32,12 @@ class AccountController extends Controller
         $account = Account::findOrFail($accountId);
         $account->status = $status;
         $account->save();
+    }
+
+    public function getAccountDetails($accountId){
+        $account = Account::findOrFail($accountId);
+        $user = User::findOrFail($account->user_id);
+        $accounts = $user->userAccounts()->get();
+        return view('account-details', ['account' => $account, 'user' => $user, 'accounts' => $accounts]);
     }
 }
