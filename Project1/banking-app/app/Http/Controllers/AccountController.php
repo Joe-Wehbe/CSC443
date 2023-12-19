@@ -31,7 +31,5 @@ class AccountController extends Controller
         $account = Account::findOrFail($accountId);
         $account->status = $status;
         $account->save();
-
-        return response()->json(['message' => 'Account status updated successfully']);
     }
 }
