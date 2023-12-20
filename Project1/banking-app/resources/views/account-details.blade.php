@@ -54,17 +54,25 @@
                 <button class="button" onclick="openToModal()">Transfer to</button>
                 <div id="to-modal-container">
                     <div class="to-modal-content">
-                        <p>Choose the account to transfer to</p>
-                        <select name="account">
-                            <option value="acc1">First Account</option>
-                            <option value="acc2">Family Account</option>
-                        </select>
-                        <p>Enter the amount to transfer</p>
-                        <input type="number" name="to-amount" placeholder="Amount"></input>
-                        <button onclick="">Transfer</button>
-                        <button onclick="closeToModal()">Cancel</button>
+                        <form id="transfer-to-form" action="/transfer-to" method="POST">
+                            @csrf
+                            <p>Choose the account to transfer to</p>
+                            <select name="to_account">
+                                @foreach($accounts as $otherAccount)
+                                    @if($otherAccount['id'] != $account['id'])
+                                        <option value="{{ $otherAccount['id'] }}">{{ $otherAccount['name'] }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            <p>Enter the amount to transfer</p>
+                            <input type="number" name="to_amount" placeholder="Amount"></input>
+                            <input type="hidden" name="accountId" value="{{ $account['id'] }}">
+                            <button type="submit">Transfer</button>
+                            <button onclick="closeToModal()">Cancel</button>
+                        </form>
                     </div>
                 </div>
+
 
                 <button class="button1" onclick="openFromModal()">Transfer from</button>
                 <div id="from-modal-container">
@@ -131,7 +139,7 @@
                             <th>Date</th>
                             <th>Withdrawals</th>
                             <th>Deposits</th>
-                            <th>Balance</th>
+                            <th>Balance ({{$account['currency']}})</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -152,9 +160,9 @@
                             @endif
 
                             @if($transaction['deposit'] > $transaction['withdrawal'])
-                                <td class="green">{{$transaction['balance']}} &nbsp {{$account['currency']}}</td>
+                                <td class="green">{{$transaction['balance']}}</td>
                             @else
-                                <td class="red">{{$transaction['balance']}} &nbsp {{$account['currency']}}</td>
+                                <td class="red">{{$transaction['balance']}}</td>
                             @endif
                         </tr>
                         @endforeach

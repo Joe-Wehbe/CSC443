@@ -30,12 +30,14 @@ Route::post('/create-account', [AccountController::class, 'createAccount']);
 Route::post('/update-account-status', [AccountController::class, 'updateAccountStatus']);
 Route::get("/account-details/{accountId}", [AccountController::class, 'getAccountDetails']);
 
+
 //          **************** Transaction Controller ****************
 Route::post('/deposit', [TransactionController::class, 'deposit']);
 Route::post('/withdraw', [TransactionController::class, 'withdraw']);
+Route::post('/transfer-to', [TransactionController::class, 'transferTo']);
+
 
 //          **************** Navigation Routes ****************
-
 Route::get("/register", function () {return view('register');});
 Route::get("/login", function () {return view('login');});
 Route::get("/create-account", function () {return view('create-account');});

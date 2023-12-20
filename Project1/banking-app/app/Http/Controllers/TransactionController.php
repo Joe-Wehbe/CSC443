@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
-
- 
     public function deposit(Request $request)
     {
         $data = $request->validate([
@@ -59,6 +57,48 @@ class TransactionController extends Controller
     
         return redirect("/account-details/{$data['accountId']}");
     }
+
+    public function transferTo(Request $request)
+    {
+        $data = $request->validate([
+            'to_amount' => 'required|numeric|min:0',
+            'to_account' => 'required|exists:accounts,id',
+            'accountId' => 'required|exists:accounts,id',
+        ]);
+    
+        $senderAccount = Account::findOrFail($data['accountId']);    
+        $receiverAccount = Account::findOrFail($data['to_account']);
+        $transferAmount = $data['to_amount'];
+    
+        $senderCurrentBalance = $senderAccount->balance;
+        $senderNewBalance = $senderCurrentBalance - $transferAmount;
+    
+        $senderTransaction = new Transaction([
+            'withdrawal' => $transferAmount,
+            'deposit' => 0,
+        ]);
+        $senderTransaction->balance = $senderNewBalance;
+    
+        $senderAccount->accountTransactions()->save($senderTransaction);
+        $senderAccount->balance = $senderNewBalance;
+        $senderAccount->save();
+    
+        $receiverCurrentBalance = $receiverAccount->balance;
+        $receiverNewBalance = $receiverCurrentBalance + $transferAmount;
+    
+        $receiverTransaction = new Transaction([
+            'deposit' => $transferAmount,
+            'withdrawal' => 0,
+        ]);
+        $receiverTransaction->balance = $receiverNewBalance;
+    
+        $receiverAccount->accountTransactions()->save($receiverTransaction);
+        $receiverAccount->balance = $receiverNewBalance;
+        $receiverAccount->save();
+    
+        return redirect("/account-details/{$data['accountId']}");
+    }
+    
     
     
 }
