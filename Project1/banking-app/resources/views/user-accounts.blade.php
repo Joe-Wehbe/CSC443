@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ asset('css/user-accounts.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <title>User Accounts</title>
     </head>
     <body>
@@ -19,7 +20,7 @@
         <div class="container">
             <div class="search-container">
                 <i class="fa fa-search"></i>
-                <input type="text" placeholder="Search accounts...">
+                <input id="searchInput" type="text" placeholder="Search accounts...">
             </div><br>
 
             <div class="statement">
