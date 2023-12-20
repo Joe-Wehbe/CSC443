@@ -47,7 +47,6 @@ nav a:hover {
     display: flex;
     align-items: center;
     padding: 20px;
-    width: 70%;
     height: 45%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
@@ -84,7 +83,7 @@ img {
 }
 
 .right-side-container {
-    margin-left: 100px;
+    margin-left: 20px;
     width: 400px;
 }
 
