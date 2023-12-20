@@ -4,6 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ asset('css/users.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="{{ asset('js/users.js') }}"></script>
         <title>Users</title>
     </head>
     <body>
@@ -19,7 +21,7 @@
         <div class="container">
             <div class="search-container">
                 <i class="fa fa-search"></i>
-                <input type="text" placeholder="Search user...">
+                <input id="searchInput" type="text" placeholder="Search users...">
                 <a href="/user-requests" class="button">View account creation requests</a>
             </div><br>
 
