@@ -21,7 +21,7 @@
                 <a class="title"> Logging in </a>
                 <a href="/register">Signup</a>
                 <a href="/login">Signin</a>
-                <a href="#">About</a>
+                <a href="/about">About</a>
             </div>
         </nav>
         <div class="container">

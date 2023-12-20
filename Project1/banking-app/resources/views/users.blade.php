@@ -13,7 +13,7 @@
             <div class="nav-container">
                 <a class="title"> Bank Users</a>
                 <a href="/accounts">Home</a>
-                <a href="">About</a>
+                <a href="/about">About</a>
                 <a href="/logout">Logout</a>
             </div>
         </nav>

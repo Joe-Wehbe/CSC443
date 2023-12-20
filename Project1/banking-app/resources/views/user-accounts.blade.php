@@ -12,7 +12,7 @@
             <div class="nav-container">
                 <a class="title"> {{$user->first_name}} {{$user->last_name}}'s Accounts </a>
                 <a href="/accounts">Home</a>
-                <a href="">About</a>
+                <a href="/about">About</a>
                 <a href="/logout">Logout</a>
             </div>
         </nav>

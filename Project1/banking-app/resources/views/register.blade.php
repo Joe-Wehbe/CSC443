@@ -13,7 +13,7 @@
                 <a class="title"> Creating an account </a>
                 <a href="/register">Signup</a>
                 <a href="/login">Signin</a>
-                <a href="#">About</a>
+                <a href="/about">About</a>
             </div>
         </nav>
         <div class="container">
