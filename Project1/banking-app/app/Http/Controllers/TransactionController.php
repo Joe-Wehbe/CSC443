@@ -44,6 +44,10 @@ class TransactionController extends Controller
     
         $currentBalance = $account->balance;
         $newBalance = $currentBalance - $data['withdraw_amount'];
+
+        if ($newBalance < 0){
+            return redirect("/account-details/{$data['accountId']}");
+        }
     
         $transaction = new Transaction([
             'withdrawal' => $data['withdraw_amount'],
@@ -72,6 +76,10 @@ class TransactionController extends Controller
     
         $senderCurrentBalance = $senderAccount->balance;
         $senderNewBalance = $senderCurrentBalance - $transferAmount;
+
+        if ($senderNewBalance < 0){
+            return redirect("/account-details/{$data['accountId']}");
+        }
     
         $senderTransaction = new Transaction([
             'withdrawal' => $transferAmount,
@@ -111,6 +119,23 @@ class TransactionController extends Controller
         $senderAccount = Account::findOrFail($data['from_account']);
         $transferAmount = $data['from_amount'];
 
+        $senderCurrentBalance = $senderAccount->balance;
+        $senderNewBalance = $senderCurrentBalance - $transferAmount;
+
+        if ($senderNewBalance < 0){
+            return redirect("/account-details/{$data['accountId']}");
+        }
+
+        $senderTransaction = new Transaction([
+            'deposit' => 0,
+            'withdrawal' => $transferAmount,
+        ]);
+        $senderTransaction->balance = $senderNewBalance;
+
+        $senderAccount->accountTransactions()->save($senderTransaction);
+        $senderAccount->balance = $senderNewBalance;
+        $senderAccount->save();
+
         $receiverCurrentBalance = $receiverAccount->balance;
         $receiverNewBalance = $receiverCurrentBalance + $transferAmount;
 
@@ -123,19 +148,6 @@ class TransactionController extends Controller
         $receiverAccount->accountTransactions()->save($receiverTransaction);
         $receiverAccount->balance = $receiverNewBalance;
         $receiverAccount->save();
-
-        $senderCurrentBalance = $senderAccount->balance;
-        $senderNewBalance = $senderCurrentBalance - $transferAmount;
-
-        $senderTransaction = new Transaction([
-            'deposit' => 0,
-            'withdrawal' => $transferAmount,
-        ]);
-        $senderTransaction->balance = $senderNewBalance;
-
-        $senderAccount->accountTransactions()->save($senderTransaction);
-        $senderAccount->balance = $senderNewBalance;
-        $senderAccount->save();
 
         return redirect("/account-details/{$data['accountId']}");
     }
