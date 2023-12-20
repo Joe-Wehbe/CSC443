@@ -30,6 +30,7 @@ Route::post('/create-account', [AccountController::class, 'createAccount']);
 Route::post('/update-account-status', [AccountController::class, 'updateAccountStatus']);
 Route::get("/account-details/{accountId}", [AccountController::class, 'getAccountDetails']);
 Route::get("/user-account-details/{accountId}", [AccountController::class, 'getAccountDetailsAdmin']);
+Route::post('/update-account-availability', [AccountController::class, 'updateAccountAvailability']);
 
 
 //          **************** Transaction Controller ****************

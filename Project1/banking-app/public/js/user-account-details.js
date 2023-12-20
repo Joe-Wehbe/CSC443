@@ -1,8 +1,26 @@
-function disableAccount() {
+function disableAccount(accountId) {
     var result = confirm("Are you sure you want to disable this account?");
     if (result) {
+        updateAccountAvailability(accountId, '0');
         alert("Account disabled successfully.");
     }
+}
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+function updateAccountAvailability(accountId, is_enabled) {
+    $.ajax({
+        type: 'POST',
+        url: '/update-account-availability',
+        data: {
+            accountId: accountId,
+            is_enabled: is_enabled
+        }
+    });
 }
 
 

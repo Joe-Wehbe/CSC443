@@ -2,8 +2,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/user-account-details.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <title>User Account Details</title>
     </head>
     <body>
@@ -20,7 +22,7 @@
             <div class="search-container">
                 <i class="fa fa-search"></i>
                 <input type="text" placeholder="Search transaction date...">
-                <button class="button" onclick="disableAccount()">Disable Account</button>
+                <button class="button" onclick="disableAccount({{$account->id}})">Disable Account</button>
             </div>
 
             <div class="inner-container">

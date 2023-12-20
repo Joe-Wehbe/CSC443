@@ -34,23 +34,43 @@
             <div class="cards-container">
                 @foreach($accounts as $account)
                     @if($account['status'] == 'accepted')
-                        <div class="card" data-account-id="{{$account['id']}}">
-                            <div class="card-content">
-                                <div class="card-title">{{$account['name']}}</div>
-                                <p class="balance">
-                                    <i class="fa-solid fa-coins"></i> Balance:
-                                    <span class="balance-value">{{$account['balance']}}</span>
-                                </p>
-                                <p class="currency">
-                                    <i class="fa-solid fa-dollar-sign"></i> Currency:
-                                    <span class="currency-value">{{$account['currency']}}</span>
-                                </p>
-                                <p class="date">
-                                    <i class="fa-solid fa-calendar-days"></i> Creation date:
-                                    <span class="date-value">{{$account['created_at']}}</span>
-                                </p>
+                        @if($account['is_enabled'] == '1')
+                            <div class="card" data-account-id="{{$account['id']}}">
+                                <div class="card-content">
+                                    <div class="card-title">{{$account['name']}}</div>
+                                    <p class="balance">
+                                        <i class="fa-solid fa-coins"></i> Balance:
+                                        <span class="balance-value">{{$account['balance']}}</span>
+                                    </p>
+                                    <p class="currency">
+                                        <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                        <span class="currency-value">{{$account['currency']}}</span>
+                                    </p>
+                                    <p class="date">
+                                        <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                        <span class="date-value">{{$account['created_at']}}</span>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="card" data-account-id="{{$account['id']}}">
+                                <div class="card-content">
+                                    <div class="card-title">{{$account['name']}} (Disabled)</div>
+                                    <p class="balance">
+                                        <i class="fa-solid fa-coins"></i> Balance:
+                                        <span class="balance-value">{{$account['balance']}}</span>
+                                    </p>
+                                    <p class="currency">
+                                        <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                        <span class="currency-value">{{$account['currency']}}</span>
+                                    </p>
+                                    <p class="date">
+                                        <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                        <span class="date-value">{{$account['created_at']}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        @endif
                     @endif
                 @endforeach
             </div>

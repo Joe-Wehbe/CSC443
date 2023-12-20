@@ -50,5 +50,14 @@ class AccountController extends Controller
         return view('user-account-details', ['account' => $account, 'user' => $user, 'accounts' => $accounts, 'transactions' => $transactions]);
     }
 
+    public function updateAccountAvailability(Request $request)
+    {
+        $accountId = $request->input('accountId');
+        $is_enabled = $request->input('is_enabled');
+
+        $account = Account::findOrFail($accountId);
+        $account->is_enabled = $is_enabled;
+        $account->save();
+    }
 
 }
