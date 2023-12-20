@@ -59,7 +59,7 @@
                             <p>Choose the account to transfer to</p>
                             <select name="to_account">
                                 @foreach($accounts as $otherAccount)
-                                    @if($otherAccount['id'] != $account['id'])
+                                    @if($otherAccount['id'] != $account['id'] && $otherAccount['is_enabled'] != 0)
                                         <option value="{{ $otherAccount['id'] }}">{{ $otherAccount['name'] }}</option>
                                     @endif
                                 @endforeach
@@ -81,7 +81,7 @@
                         <p>Choose the account to transfer from</p>
                         <select name="from_account">
                             @foreach($accounts as $otherAccount)
-                                @if($otherAccount['id'] != $account['id'])
+                                @if($otherAccount['id'] != $account['id'] && $otherAccount['is_enabled'] != 0)
                                     <option value="{{ $otherAccount['id'] }}">{{ $otherAccount['name'] }}</option>
                                 @endif
                             @endforeach
@@ -176,7 +176,7 @@
 
                 <div class="other-accounts-container">Other accounts
                     @foreach($accounts as $otherAccount)
-                        @if($otherAccount['id'] != $account['id'])
+                        @if($otherAccount['id'] != $account['id'] && $otherAccount['is_enabled'] != 0)
                             <div class="card" data-account-id="{{$otherAccount['id']}}">
                                 <div class="card-content">
                                     <div class="card-title">{{ $otherAccount['name']}}</div>
