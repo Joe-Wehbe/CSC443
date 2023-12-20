@@ -37,10 +37,14 @@
                 <button class="button3" onclick="openWithdrawModal()">Withdraw</button>
                 <div id="withdraw-modal-container">
                     <div class="withdraw-modal-content">
-                        <p>Enter the amount to withdraw</p>
-                        <input type="number" name="withdraw-amount" placeholder="Amount"></input>
-                        <button onclick="">Withdraw</button>
-                        <button onclick="closeWithdrawModal()">Cancel</button>
+                        <form id="withdraw-form" action="/withdraw" method="POST">
+                            @csrf
+                            <p>Enter the amount to withdraw</p>
+                            <input type="number" name="withdraw_amount" placeholder="Amount"></input>
+                            <input type="hidden" name="accountId" value="{{$account['id']}}">
+                            <button type="submit">Withdraw</button>
+                            <button onclick="closeWithdrawModal()">Cancel</button>
+                        </form>
                     </div>
                 </div>
 
@@ -120,7 +124,6 @@
                     </div>
                 </div>
 
-
                 <div class="transactions-container"> Transactions history
                     <table>
                         <thead>
@@ -132,12 +135,29 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($transactions->reverse() as $transaction)
                         <tr>
-                            <td>Row 1, Cell 1</td>
-                            <td>Row 1, Cell 2</td>
-                            <td>Row 1, Cell 3</td>
-                            <td>Row 1, Cell 4</td>
+                            <td>{{$transaction['created_at']}}</td>
+
+                            @if($transaction['withdrawal'] > 0)
+                                <td class="red">{{$transaction['withdrawal']}}</td>
+                            @else
+                                <td>{{$transaction['withdrawal']}}</td>
+                            @endif
+
+                            @if($transaction['deposit'] > 0)
+                                <td class="green">{{$transaction['deposit']}}</td>
+                            @else
+                                <td> {{$transaction['deposit']}}</td>
+                            @endif
+
+                            @if($transaction['deposit'] > $transaction['withdrawal'])
+                                <td class="green">{{$transaction['balance']}} &nbsp {{$account['currency']}}</td>
+                            @else
+                                <td class="red">{{$transaction['balance']}} &nbsp {{$account['currency']}}</td>
+                            @endif
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

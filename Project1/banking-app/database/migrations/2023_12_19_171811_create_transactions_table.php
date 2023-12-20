@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('deposit');
             $table->integer('withdrawal');
+            $table->integer('balance')->default(0);
             $table->timestamps();
             $table->foreignId('account_id')->constrained();
         });

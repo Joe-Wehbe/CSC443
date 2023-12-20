@@ -38,6 +38,9 @@ class AccountController extends Controller
         $account = Account::findOrFail($accountId);
         $user = User::findOrFail($account->user_id);
         $accounts = $user->userAccounts()->get();
-        return view('account-details', ['account' => $account, 'user' => $user, 'accounts' => $accounts]);
+        $transactions = $account->accountTransactions()->get();
+        return view('account-details', ['account' => $account, 'user' => $user, 'accounts' => $accounts, 'transactions' => $transactions]);
     }
+
+
 }

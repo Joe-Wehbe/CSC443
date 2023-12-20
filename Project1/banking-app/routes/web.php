@@ -18,23 +18,24 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-// User Controller
+//          **************** User Controller ****************
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/accounts', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 Route::get("/user-accounts/{userId}", [UserController::class, 'getUserAccounts']);
 
 
-// Account Controller
+//          **************** Account Controller ****************
 Route::post('/create-account', [AccountController::class, 'createAccount']);
 Route::post('/update-account-status', [AccountController::class, 'updateAccountStatus']);
 Route::get("/account-details/{accountId}", [AccountController::class, 'getAccountDetails']);
 
-// Transaction Controller
+//          **************** Transaction Controller ****************
 Route::post('/deposit', [TransactionController::class, 'deposit']);
+Route::post('/withdraw', [TransactionController::class, 'withdraw']);
 
+//          **************** Navigation Routes ****************
 
-// Navigation Routes
 Route::get("/register", function () {return view('register');});
 Route::get("/login", function () {return view('login');});
 Route::get("/create-account", function () {return view('create-account');});

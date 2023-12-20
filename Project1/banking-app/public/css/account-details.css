@@ -217,6 +217,14 @@ th, td {
   text-align: left;
 }
 
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+
 th {
   background-color: #E4E4E6;
 }
