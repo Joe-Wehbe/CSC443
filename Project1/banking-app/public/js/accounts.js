@@ -5,3 +5,22 @@ for (var i = 0; i < cards.length; i++) {
         window.location.href = '/account-details/' + accountId;
     });
 }
+
+$(document).ready(function() {
+    var accountTitleElements = $('.card-title');
+
+    $('#searchInput').on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+
+        accountTitleElements.each(function() {
+            var accountTitle = $(this).text().toLowerCase();
+            var card = $(this).closest('.card');
+
+            if (accountTitle.includes(searchText)) {
+                card.show();
+            } else {
+                card.hide();
+            }
+        });
+    });
+});
