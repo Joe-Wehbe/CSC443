@@ -98,7 +98,45 @@ class TransactionController extends Controller
     
         return redirect("/account-details/{$data['accountId']}");
     }
-    
-    
-    
+
+    public function transferFrom(Request $request){
+
+        $data = $request -> validate([
+            'from_amount' => 'required|numeric|min:0',
+            'from_account' => 'required|exists:accounts,id',
+            'accountId' => 'required|exists:accounts,id',
+        ]);
+
+        $receiverAccount = Account::findOrFail($data['accountId']);
+        $senderAccount = Account::findOrFail($data['from_account']);
+        $transferAmount = $data['from_amount'];
+
+        $receiverCurrentBalance = $receiverAccount->balance;
+        $receiverNewBalance = $receiverCurrentBalance + $transferAmount;
+
+        $receiverTransaction = new Transaction([
+            'deposit' => $transferAmount,
+            'withdrawal' => 0,
+        ]);
+        $receiverTransaction->balance = $receiverNewBalance;
+
+        $receiverAccount->accountTransactions()->save($receiverTransaction);
+        $receiverAccount->balance = $receiverNewBalance;
+        $receiverAccount->save();
+
+        $senderCurrentBalance = $senderAccount->balance;
+        $senderNewBalance = $senderCurrentBalance - $transferAmount;
+
+        $senderTransaction = new Transaction([
+            'deposit' => 0,
+            'withdrawal' => $transferAmount,
+        ]);
+        $senderTransaction->balance = $senderNewBalance;
+
+        $senderAccount->accountTransactions()->save($senderTransaction);
+        $senderAccount->balance = $senderNewBalance;
+        $senderAccount->save();
+
+        return redirect("/account-details/{$data['accountId']}");
+    }
 }

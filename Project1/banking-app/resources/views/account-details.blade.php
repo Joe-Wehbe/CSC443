@@ -73,22 +73,26 @@
                     </div>
                 </div>
 
-
                 <button class="button1" onclick="openFromModal()">Transfer from</button>
                 <div id="from-modal-container">
                     <div class="from-modal-content">
+                        <form id="transfer-from-form" action="/transfer-from" method="POST">
+                        @csrf
                         <p>Choose the account to transfer from</p>
-                        <select name="account">
-                            <option value="acc1">First Account</option>
-                            <option value="acc2">Family Account</option>
+                        <select name="from_account">
+                            @foreach($accounts as $otherAccount)
+                                @if($otherAccount['id'] != $account['id'])
+                                    <option value="{{ $otherAccount['id'] }}">{{ $otherAccount['name'] }}</option>
+                                @endif
+                            @endforeach
                         </select>
                         <p>Enter the amount to transfer</p>
-                        <input type="number" name="from-amount" placeholder="Amount"></input>
-                        <button onclick="">Cancel</button>
+                        <input type="number" name="from_amount" placeholder="Amount"></input>
+                        <input type="hidden" name="accountId" value="{{ $account['id'] }}">
+                        <button type="submit">Transfer</button>
                         <button onclick="closeFromModal()">Cancel</button>
                     </div>
-                </div>
-                
+                </div>        
             </div>
 
             <div class="inner-container">

@@ -35,6 +35,7 @@ Route::get("/account-details/{accountId}", [AccountController::class, 'getAccoun
 Route::post('/deposit', [TransactionController::class, 'deposit']);
 Route::post('/withdraw', [TransactionController::class, 'withdraw']);
 Route::post('/transfer-to', [TransactionController::class, 'transferTo']);
+Route::post('/transfer-from', [TransactionController::class, 'transferFrom']);
 
 
 //          **************** Navigation Routes ****************
