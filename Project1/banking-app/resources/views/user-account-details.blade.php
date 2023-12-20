@@ -21,8 +21,12 @@
         <div class="container">
             <div class="search-container">
                 <i class="fa fa-search"></i>
-                <input type="text" placeholder="Search transaction date...">
-                <button class="button" onclick="disableAccount({{$account->id}})">Disable Account</button>
+                <input id="searchInput" type="text" placeholder="Search transaction date...">
+                @if($account['is_enabled'] == '1')
+                    <button class="button" onclick="disableAccount({{$account->id}})">Disable Account</button>
+                @else
+                    <button class="button" onclick="enableAccount({{$account->id}})">Enable Account</button>
+                @endif
             </div>
 
             <div class="inner-container">

@@ -46,3 +46,24 @@ for (var i = 0; i < cards.length; i++) {
 }
 
 
+$(document).ready(function() {
+    var transactionDateElements = $('tbody tr td:first-child');
+
+    $('#searchInput').on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+
+        transactionDateElements.each(function() {
+            var transactionDate = $(this).text().toLowerCase();
+            var row = $(this).closest('tr');
+
+            if (transactionDate.includes(searchText)) {
+                row.show();
+            } else {
+                row.hide();
+            }
+        });
+    });
+});
+
+
+
