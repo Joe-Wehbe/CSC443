@@ -104,7 +104,7 @@
                 <div class="other-accounts-container">Other accounts
                 @foreach($accounts as $otherAccount)
                     @if($otherAccount['id'] != $account['id'])
-                        <div class="card">
+                        <div class="card" data-account-id="{{$otherAccount['id']}}">
                             <div class="card-content">
                                 <div class="card-title">{{ $otherAccount['name']}}</div>
                                 <p class="balance">
