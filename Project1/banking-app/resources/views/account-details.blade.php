@@ -101,7 +101,6 @@
                     <span class="viewing">Viewing account</span>
                     <div class="card-content"> 
                         <div class="card-title">{{$account['name']}}
-                            <i class="fa-solid fa-trash" onclick="confirmDelete()"></i>
                         </div>
 
                         <div class="personal-info">Personal information</div>
@@ -177,7 +176,7 @@
 
                 <div class="other-accounts-container">Other accounts
                     @foreach($accounts as $otherAccount)
-                        @if($otherAccount['id'] != $account['id'] && $otherAccount['is_enabled'] != 0)
+                        @if($otherAccount['id'] != $account['id'] && $otherAccount['is_enabled'] != 0 && $otherAccount['status'] == 'accepted')
                             <div class="card" data-account-id="{{$otherAccount['id']}}">
                                 <div class="card-content">
                                     <div class="card-title">{{ $otherAccount['name']}}</div>

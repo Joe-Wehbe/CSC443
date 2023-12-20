@@ -44,6 +44,7 @@ Route::post('/transfer-from', [TransactionController::class, 'transferFrom']);
 Route::get("/register", function () {return view('register');});
 Route::get("/login", function () {return view('login');});
 Route::get("/create-account", function () {return view('create-account');});
+Route::get("/about", function () {return view('about');});
 
 Route::get("/accounts", function () {
     if(auth()->check()){$accounts = auth()->user()->userAccounts()->latest()->get();}
