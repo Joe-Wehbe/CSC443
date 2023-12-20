@@ -11,7 +11,7 @@
             <div class="nav-container">
                 <a class="title"> Viewing Account Details</a>
                 <a href="/accounts">Home</a>
-                <a href="">About</a>
+                <a href="#">About</a>
                 <a href="/logout">Logout</a>
             </div>
         </nav>

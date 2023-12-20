@@ -34,7 +34,7 @@
             <div class="cards-container">
                 @foreach($accounts as $account)
                     @if($account['status'] == 'accepted')
-                        <div class="card">
+                        <div class="card" data-account-id="{{$account['id']}}">
                             <div class="card-content">
                                 <div class="card-title">{{$account['name']}}</div>
                                 <p class="balance">

@@ -29,6 +29,7 @@ Route::get("/user-accounts/{userId}", [UserController::class, 'getUserAccounts']
 Route::post('/create-account', [AccountController::class, 'createAccount']);
 Route::post('/update-account-status', [AccountController::class, 'updateAccountStatus']);
 Route::get("/account-details/{accountId}", [AccountController::class, 'getAccountDetails']);
+Route::get("/user-account-details/{accountId}", [AccountController::class, 'getAccountDetailsAdmin']);
 
 
 //          **************** Transaction Controller ****************
@@ -62,8 +63,5 @@ Route::get("/user-requests", function () {
     if(auth()->check()){$accounts = Account::all(); $users = User::All();}
     return view('user-requests', ['accounts' => $accounts, 'users' => $users]);
 });
-
-Route::get("/user-account-details", function () {return view('user-account-details');});
-
 
 

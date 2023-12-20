@@ -11,7 +11,7 @@
             <div class="nav-container">
                 <a class="title"> Viewing Account Details</a>
                 <a href="/accounts">Home</a>
-                <a href="">About</a>
+                <a href="#">About</a>
                 <a href="/logout">Logout</a>
             </div>
         </nav>
@@ -27,38 +27,38 @@
                 <div class="view-card">
                     <span class="viewing">Viewing Account</span>
                     <div class="card-content"> 
-                        <div class="card-title">First account
+                        <div class="card-title">{{$account['name']}}
                         </div>
 
                         <div class="personal-info">User information</div>
                         <p class="first-name">
                             <i class="fa fa-user"></i> 
                             <span class="fname">First Name:</span>
-                            <span class="fname-value">Joe</span>
+                            <span class="fname-value">{{$user['first_name']}}</span>
                         </p>
                         <p class="last-name">
                             <i class="fa-solid fa-users"></i>
                             <span class="lname">Last Name:</span>
-                            <span class="lname-value">Wehbe</span>
+                            <span class="lname-value">{{$user['last_name']}}</span>
                         </p>
                         <p class="e-mail">
                             <i class="fa-solid fa-envelope"></i> 
                             <span class="email">Email:</span>
-                            <span class="email-value">joe.wehbe@lau.edu</span>
+                            <span class="email-value">{{$user['email']}}</span>
                         </p><br>
 
                         <div class="personal-info">Account information</div>
                         <p class="balance">
                             <i class="fa-solid fa-coins"></i> Balance:
-                            <span class="balance-value">30000</span>
+                            <span class="balance-value">{{$account['balance']}}</span>
                         </p>
                         <p class="currency">
                             <i class="fa-solid fa-dollar-sign"></i> Currency:
-                            <span class="currency-value">USD</span>
+                            <span class="currency-value">{{$account['currency']}}</span>
                         </p>
                         <p class="date">
                             <i class="fa-solid fa-calendar-days"></i> Creation date:
-                            <span class="date-value">30-8-2021</span>
+                            <span class="date-value">{{ $account['created_at']->format('Y-m-d') }}</span>
                         </p>
                     </div>
                 </div>
@@ -74,63 +74,55 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($transactions->reverse() as $transaction)
                         <tr>
-                            <td>Row 1, Cell 1</td>
-                            <td>Row 1, Cell 2</td>
-                            <td>Row 1, Cell 3</td>
-                            <td>Row 1, Cell 4</td>
+                            <td>{{$transaction['created_at']}}</td>
+
+                            @if($transaction['withdrawal'] > 0)
+                                <td class="red">{{$transaction['withdrawal']}}</td>
+                            @else
+                                <td>{{$transaction['withdrawal']}}</td>
+                            @endif
+
+                            @if($transaction['deposit'] > 0)
+                                <td class="green">{{$transaction['deposit']}}</td>
+                            @else
+                                <td> {{$transaction['deposit']}}</td>
+                            @endif
+
+                            @if($transaction['deposit'] > $transaction['withdrawal'])
+                                <td class="green">{{$transaction['balance']}}</td>
+                            @else
+                                <td class="red">{{$transaction['balance']}}</td>
+                            @endif
                         </tr>
-                        <tr>
-                            <td>Row 2, Cell 1</td>
-                            <td>Row 2, Cell 2</td>
-                            <td>Row 2, Cell 3</td>
-                            <td>Row 1, Cell 4</td>
-                        </tr>
-                        <tr>
-                            <td>Row 3, Cell 1</td>
-                            <td>Row 3, Cell 2</td>
-                            <td>Row 3, Cell 3</td>
-                            <td>Row 1, Cell 4</td>
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
 
                 <div class="other-accounts-container">Other accounts
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-title">Personal account</div>
-                            <p class="balance">
-                                <i class="fa-solid fa-coins"></i> Balance:
-                                <span class="balance-value">30000</span>
-                            </p>
-                            <p class="currency">
-                                <i class="fa-solid fa-dollar-sign"></i> Currency:
-                                <span class="currency-value">EUR</span>
-                            </p>
-                            <p class="date">
-                                <i class="fa-solid fa-calendar-days"></i> Creation date:
-                                <span class="date-value">30-8-2021</span>
-                            </p>
+                @foreach($accounts as $otherAccount)
+                    @if($otherAccount['id'] != $account['id'])
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-title">{{ $otherAccount['name']}}</div>
+                                <p class="balance">
+                                    <i class="fa-solid fa-coins"></i> Balance:
+                                    <span class="balance-value">{{$otherAccount['balance']}}</span>
+                                </p>
+                                <p class="currency">
+                                    <i class="fa-solid fa-dollar-sign"></i> Currency:
+                                    <span class="currency-value">{{$otherAccount['currency']}}</span>
+                                </p>
+                                <p class="date">
+                                    <i class="fa-solid fa-calendar-days"></i> Creation date:
+                                    <span class="date-value">{{ $otherAccount['created_at']->format('Y-m-d') }}</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-title">First account</div>
-                            <p class="balance">
-                                <i class="fa-solid fa-coins"></i> Balance:
-                                <span class="balance-value">30000</span>
-                            </p>
-                            <p class="currency">
-                                <i class="fa-solid fa-dollar-sign"></i> Currency:
-                                <span class="currency-value">USD</span>
-                            </p>
-                            <p class="date">
-                                <i class="fa-solid fa-calendar-days"></i> Creation date:
-                                <span class="date-value">30-8-2021</span>
-                            </p>
-                        </div>
-                    </div>
+                    @endif
+                @endforeach
                 </div>
             </div>
         </div>
