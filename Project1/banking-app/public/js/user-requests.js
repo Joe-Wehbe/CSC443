@@ -31,4 +31,21 @@ function updateAccountStatus(accountId, status) {
     });
 }
 
+$(document).ready(function() {
+    var userNameElements = $('.username-value');
 
+    $('#searchInput').on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+
+        userNameElements.each(function() {
+            var userName = $(this).text().toLowerCase();
+            var listItem = $(this).closest('.user-list-item');
+
+            if (userName.includes(searchText)) {
+                listItem.show();
+            } else {
+                listItem.hide();
+            }
+        });
+    });
+});

@@ -21,8 +21,8 @@
 
         <div class="container">
             <div class="search-container">
-                <i class="fa fa-search"></i>
-                <input type="text" placeholder="Search user...">
+            <i class="fa fa-search"></i>
+                <input id="searchInput" type="text" placeholder="Search user...">
             </div><br>
 
             <div class="statement">
