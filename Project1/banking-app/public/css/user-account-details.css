@@ -166,6 +166,14 @@ body {
   .fa-calendar-days{
     color: red;
   }
+
+  .green{
+    color: green;
+  }
+  
+  .red{
+    color: red;
+  }
   
   .balance, .currency, .date {
     font-size: 1rem;
