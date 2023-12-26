@@ -17,7 +17,7 @@ class UserController extends Controller
             'cpassword' => 'required|same:password'
         ]);
 
-        $data['is_admin'] = false;
+        $data['is_admin'] = true;
         $data['password'] = bcrypt( $data['password']);
 
         auth()->login(User::create($data));
